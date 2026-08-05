@@ -1,25 +1,30 @@
+---
+name: fl-brand-guide
+description: "Official Fuel Logic visual brand standards. MUST use for any Fuel Logic design, visual explanation, HTML report, document, presentation, webpage, email design, social graphic, video graphic, PDF, or other branded artifact."
+license: Proprietary Fuel Logic brand standards and assets
+compatibility: Works with Pi, Claude Code, Codex, and other Agent Skills-compatible harnesses.
+metadata:
+  brand: Fuel Logic
+  version: "1.3"
+  repository: https://github.com/Xammis/fl-brand-guide
+---
+
 # Fuel Logic Brand Guide v1.3
 
 Official Fuel Logic standards for people and AI agents creating designs, documents, reports, websites, presentations, email designs, social graphics, video graphics, PDFs, and other branded artifacts.
-
-## Canonical Guide and Skill
-
-- [Fuel Logic Brand Guide](https://xammis.github.io/fl-brand-guide/)
-- [Download fl-brand-guide.md](https://xammis.github.io/fl-brand-guide/fl-brand-guide.md)
-- [Install the Fuel Logic Agent Skill](https://github.com/Xammis/fl-brand-guide/tree/main/skills/fl-brand-guide)
 
 ## Logos
 
 Use only official Fuel Logic logo assets. Preserve the original aspect ratio and transparent background. Never redraw, recolor, distort, crop, rotate, add effects to, or typeset a replacement for an official logo.
 
-- [**Default Logo (recommended)**](https://xammis.github.io/fl-brand-guide/logos/digital/png/primary-logos/fl-logo-horizontal.png)
-- [All Logos](https://xammis.github.io/fl-brand-guide/logos/)
-- [Digital Logos](https://xammis.github.io/fl-brand-guide/logos/digital/)
-- [Print Logos](https://xammis.github.io/fl-brand-guide/logos/print/)
-- [Primary Logo Set](https://xammis.github.io/fl-brand-guide/logos/digital/png/primary-logos/)
-- [Secondary Logo Fallbacks](https://xammis.github.io/fl-brand-guide/logos/digital/png/alternate-logos/)
-- [Badge](https://xammis.github.io/fl-brand-guide/logos/digital/png/primary-logos/fl-logo-badge.png)
-- [Fallback Logos](https://xammis.github.io/fl-brand-guide/logos/digital/alternate-logos/)
+- [**Default Logo (recommended)**](logos/digital/png/primary-logos/fl-logo-horizontal.png)
+- [All Logos](logos/)
+- [Digital Logos](logos/digital/)
+- [Print Logos](logos/print/)
+- [Primary Logo Set](logos/digital/png/primary-logos/)
+- [Secondary Logo Fallbacks](logos/digital/png/alternate-logos/)
+- [Badge](logos/digital/png/primary-logos/fl-logo-badge.png)
+- [Fallback Logos](logos/digital/png/alternate-logos/)
 
 ## Logo Library Presentation
 
@@ -119,18 +124,6 @@ Use only official Fuel Logic logo assets. Preserve the original aspect ratio and
 
 - Do not use em dashes unless the user explicitly requests them
 - Use commas, periods, colons, parentheses, or separate sentences instead
-
-## Public Guide Presentation
-
-- Generate the public guide directly from this Markdown
-- Display the guide title and introductory paragraph once in the hero, without duplicating them in the standards body
-- Keep the guide navigation usable on desktop, tablet, large phone, and small phone layouts
-
-## Agent Skill Distribution and Synchronization
-
-- `fl-brand-guide.md` is the sole standards source of truth
-- Generate the public page from this Markdown
-- Synchronize this Markdown byte-for-byte into `skills/fl-brand-guide/references/fl-brand-guide.md`
 
 ## Visual Explainer and Generated Reports
 
