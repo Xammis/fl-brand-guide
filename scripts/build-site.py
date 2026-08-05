@@ -119,7 +119,7 @@ def page(title: str, body: str, depth: int = 0) -> str:
 
 
 def build_home() -> None:
-    body = f'''<section class="hero"><div class="eyebrow">Official standards · v1.0</div><h1>Fuel Logic <span class="accent">Brand Guide</span></h1><p class="lead">One public source for the people and AI agents creating Fuel Logic designs, documents, reports, and digital experiences.</p><div class="actions"><a class="button" href="logos/">Browse logos</a><a class="button secondary" href="fl-brand-guide.md">Open raw Markdown</a></div></section><article class="guide">{markdown_body(GUIDE.read_text())}</article>'''
+    body = f'''<section class="hero"><div class="eyebrow">Official standards · v1.0</div><h1>Fuel Logic <span class="accent">Brand Guide</span></h1><p class="lead">One public source for the people and AI agents creating Fuel Logic designs, documents, reports, and digital experiences.</p><div class="actions"><a class="button" href="logos/">Browse logos</a><a class="button secondary" href="fl-brand-guide.md">Open raw Markdown</a><a class="button secondary" href="https://github.com/Xammis/fl-brand-guide/tree/main/skills/fl-brand-guide">Install AI skill</a></div></section><article class="guide">{markdown_body(GUIDE.read_text())}</article>'''
     (ROOT / "index.html").write_text(page("Brand Guide", body))
 
 

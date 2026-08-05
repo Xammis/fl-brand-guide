@@ -18,6 +18,27 @@ https://xammis.github.io/fl-brand-guide/
 
 All published asset paths use lowercase filenames with dashes instead of spaces. The original Dropbox filename remains recorded in `logos/manifest.json` for traceability.
 
+## Install the Agent Skill
+
+The canonical skill lives at `skills/fl-brand-guide/` and follows the Agent Skills standard.
+
+### Shared cross-harness installation
+
+```bash
+git clone https://github.com/Xammis/fl-brand-guide.git ~/fl-brand-guide
+mkdir -p ~/.agents/skills ~/.claude/skills ~/.codex/skills
+ln -sfn ~/fl-brand-guide/skills/fl-brand-guide ~/.agents/skills/fl-brand-guide
+ln -sfn ~/.agents/skills/fl-brand-guide ~/.claude/skills/fl-brand-guide
+ln -sfn ~/.agents/skills/fl-brand-guide ~/.codex/skills/fl-brand-guide
+```
+
+- Pi discovers `~/.agents/skills/` globally.
+- Codex uses the shared Agent Skills location; the explicit symlink also supports installations expecting `~/.codex/skills/`.
+- Claude Code receives the same canonical skill through `~/.claude/skills/`.
+- Every harness resolves to one version-controlled skill and one unchanged standards reference.
+
+Reload or restart an already-running harness after installation.
+
 ## Build
 
 ```bash
