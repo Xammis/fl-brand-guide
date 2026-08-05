@@ -91,12 +91,15 @@ Use only official Fuel Logic logo assets. Preserve the original aspect ratio and
 - Use the lighter white background variants whose filenames end in `-wh` when a background image is appropriate.
 - Use [`bg-cartographer-wh.webp`](backgrounds/bg-cartographer-wh.webp) sparingly, only about 20 to 30 percent of the time.
 - Use `bg-cartographer-wh.webp` only on full-width background sections. Tile it three times across the full width with `background-repeat: repeat` and `background-size: 33.333% auto`.
+- If a section using `bg-cartographer-wh.webp` sits immediately above or below a section with a Base (`#FFFFFF`) background, switch the Cartographer image to the white-contrast variant, [`bg-cartographer-wh-contrast.webp`](backgrounds/bg-cartographer-wh-contrast.webp). Keep the same full-width, three-across tiling treatment.
 - Mix in darker background images only when absolutely necessary or when the user explicitly requests them.
 - Every artifact must feel like light mode by default. Do not create a dark-mode treatment unless the user explicitly requests one.
 
 ## Element Colors
 
 - Text: Contrast
+- Paragraph text over a light background: Contrast (`#414141`), not Contrast Two
+- Paragraph text over a dark background: Base (`#FFFFFF`)
 - Heading: Contrast
 - Heading alternate color: Accent, only to highlight words or phrases for emphasis
 - Background: Base
