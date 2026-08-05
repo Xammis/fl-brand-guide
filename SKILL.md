@@ -84,6 +84,7 @@ Use only official Fuel Logic logo assets. Preserve the original aspect ratio and
 ## Background Images and Light Mode
 
 - The default background color for the entire page is Base (`#FFFFFF`).
+- Use Base, Base Two, or Base Three for most section backgrounds.
 - Do not apply a `body` background image by default unless the user explicitly requests one.
 - Use the lighter white background variants whose filenames end in `-wh` when a background image is appropriate.
 - Use [`bg-cartographer-wh.webp`](backgrounds/bg-cartographer-wh.webp) sparingly, only about 20 to 30 percent of the time.
