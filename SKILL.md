@@ -15,7 +15,7 @@ Official Fuel Logic standards for people and AI agents creating designs, documen
 
 ## Logos
 
-Use only official Fuel Logic logo assets. Preserve the original aspect ratio and transparent background. Never redraw, recolor, distort, crop, rotate, add effects to, or typeset a replacement for an official logo. NEVER round the corners of any logo file.
+Use only official Fuel Logic logo assets. The only sanctioned Fuel Logic logos are the files inside this skill's [`logos/`](logos/) directory. NEVER use a Fuel Logic logo from any other source, including search results, websites, downloads, generated artwork, recreated artwork, or another repository. Ty and Ezra will hate you if you violate this rule. Preserve the original aspect ratio and transparent background. Never redraw, recolor, distort, crop, rotate, add effects to, or typeset a replacement for an official logo. NEVER round the corners of any logo file.
 
 - [**Default Logo (recommended)**](logos/digital/png/primary-logos/fl-logo-horizontal.png)
 - [All Logos](logos/)
