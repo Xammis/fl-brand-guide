@@ -81,6 +81,14 @@ Use only official Fuel Logic logo assets. Preserve the original aspect ratio and
 
 > **Accent color note:** NEVER use Accent Medium or Accent Dark unless absolutely necessary. Use either shade only as a fallback when Brand Primary or Accent creates a contrast issue. Do not use these darker greens for decoration, variety, labels, or routine hover states.
 
+## Background Images and Light Mode
+
+- Use the lighter white background variants whose filenames end in `-wh` by default.
+- Use [`bg-cartographer-wh.webp`](backgrounds/bg-cartographer-wh.webp) as the default background image.
+- Tile `bg-cartographer-wh.webp` three times across the available width by default. For CSS, use `background-repeat: repeat` with `background-size: 33.333% auto`.
+- Mix in darker background images only when absolutely necessary or when the user explicitly requests them.
+- Every artifact must feel like light mode by default. Do not create a dark-mode treatment unless the user explicitly requests one.
+
 ## Element Colors
 
 - Text: Contrast
