@@ -6,13 +6,22 @@ Public Fuel Logic brand standards, official logo assets, and a harness-agnostic 
 
 https://xammis.github.io/fl-brand-guide/
 
-## Source of truth
+## Single source of truth
 
-- `fl-brand-guide.md` — the initial v1.0 standards supplied by Fuel Logic, preserved unchanged.
-- `logos/` — official digital and print logo assets downloaded from the approved Dropbox collection.
-- `logos/manifest.json` — original Dropbox paths, normalized public paths, file sizes, and SHA-256 hashes.
-- `skills/fl-brand-guide/` — Agent Skills-compatible instructions for Pi, Codex, and Claude Code.
-- `scripts/build-site.py` — deterministic static-site and logo-gallery builder.
+`fl-brand-guide.md` is the only authored standards document. Every current Fuel Logic rule belongs there.
+
+The deterministic build produces all other representations:
+
+- `index.html` and logo-gallery pages from the canonical Markdown and logo manifest.
+- `skills/fl-brand-guide/references/fl-brand-guide.md` as a byte-for-byte synchronized skill reference.
+- `skills/fl-brand-guide/SKILL.md` as a procedural Agent Skills wrapper that points to the synchronized reference.
+
+Supporting files:
+
+- `logos/` contains the approved digital and print assets.
+- `logos/manifest.json` preserves original Dropbox paths, normalized public paths, sizes, and SHA-256 hashes.
+- `scripts/build-site.py` synchronizes the skill and generates the public site.
+- `scripts/verify-sync.py` fails if any generated representation drifts.
 
 ## Asset naming
 
@@ -38,13 +47,18 @@ ln -sfn ../.agents/skills ~/.codex/skills
 
 If either harness-specific path already exists as a real directory, migrate any unique skills into `~/.agents/skills/` before replacing it with the symlink. Reload or restart an already-running harness after installation.
 
-## Build
+## Edit, build, and verify
+
+1. Edit only `fl-brand-guide.md` when changing standards.
+2. Rebuild every generated representation.
+3. Verify synchronization before committing.
 
 ```bash
 python3 scripts/build-site.py
+python3 scripts/verify-sync.py
 ```
 
-GitHub Pages serves the repository root from `main`.
+Do not hand-edit `index.html`, `skills/fl-brand-guide/SKILL.md`, or the synchronized skill reference. GitHub Actions runs the same verification on every push and pull request. GitHub Pages serves the repository root from `main`.
 
 ## Asset rights
 

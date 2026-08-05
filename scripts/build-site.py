@@ -10,6 +10,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 GUIDE = ROOT / "fl-brand-guide.md"
 LOGOS = ROOT / "logos"
+SKILL = ROOT / "skills" / "fl-brand-guide" / "SKILL.md"
+SKILL_REFERENCE = ROOT / "skills" / "fl-brand-guide" / "references" / "fl-brand-guide.md"
 
 STYLE = """
 :root {
@@ -96,34 +98,42 @@ small,.small { color: var(--contrast-three); font-size: .9rem; }
 """
 
 
-def linkify(text: str) -> str:
+INLINE_PATTERN = re.compile(r"\[([^\]]+)\]\(([^)]+)\)|`([^`]+)`|\*\*([^*]+)\*\*")
+
+
+def inline_label(text: str) -> str:
     escaped = html.escape(text)
-    escaped = re.sub(r"(https?://[^\s<]+)", lambda m: f'<a href="{m.group(1)}">{m.group(1)}</a>', escaped)
-    return re.sub(
-        r"&quot;(/logos/[^<]*?)&quot;",
-        lambda m: f'<a href="{html.escape(m.group(1).lstrip("/"))}">{m.group(1)}</a>',
-        escaped,
-    )
+    return re.sub(r"\*\*([^*]+)\*\*", lambda match: f"<strong>{match.group(1)}</strong>", escaped)
 
 
-def promote_default_logo(lines: list[str]) -> list[str]:
-    default_index = next((i for i, line in enumerate(lines) if line.startswith("- Default Logo:")), None)
-    logos_index = next((i for i, line in enumerate(lines) if line.startswith("## Logos")), None)
-    if default_index is None or logos_index is None:
-        return lines
-    first_bullet = next((i for i in range(logos_index + 1, len(lines)) if lines[i].startswith("- ")), None)
-    if first_bullet is None or default_index == first_bullet:
-        return lines
-    default_line = lines.pop(default_index)
-    lines.insert(first_bullet, default_line)
-    return lines
+def inline_markdown(text: str) -> str:
+    out: list[str] = []
+    cursor = 0
+    for match in INLINE_PATTERN.finditer(text):
+        out.append(html.escape(text[cursor : match.start()]))
+        label, href, code, strong = match.groups()
+        if label is not None and href is not None:
+            out.append(f'<a href="{html.escape(href, quote=True)}">{inline_label(label)}</a>')
+        elif code is not None:
+            out.append(f"<code>{html.escape(code)}</code>")
+        elif strong is not None:
+            out.append(f"<strong>{html.escape(strong)}</strong>")
+        cursor = match.end()
+    out.append(html.escape(text[cursor:]))
+    return "".join(out)
 
 
-def list_item(text: str) -> str:
-    if text.startswith("Default Logo:"):
-        path = text.partition(":")[2].strip()
-        return f'<strong>Default Logo (recommended):</strong> {linkify(path)}'
-    return linkify(text)
+def guide_metadata(source: str) -> tuple[str, str, str]:
+    lines = source.splitlines()
+    title = next(line[2:] for line in lines if line.startswith("# "))
+    version_match = re.search(r"\bv(\d+(?:\.\d+)*)\b", title)
+    if not version_match:
+        raise ValueError("Guide title must contain a version such as v1.3")
+    version = version_match.group(1)
+    display_title = re.sub(r"\s+v\d+(?:\.\d+)*$", "", title)
+    title_index = next(i for i, line in enumerate(lines) if line.startswith("# "))
+    intro = next(line for line in lines[title_index + 1 :] if line.strip() and not line.startswith("#"))
+    return display_title, version, intro
 
 
 def markdown_body(source: str, *, omit_intro: bool = False) -> str:
@@ -138,7 +148,6 @@ def markdown_body(source: str, *, omit_intro: bool = False) -> str:
         if lines and not lines[0].startswith(("#", "- ")):
             lines.pop(0)
 
-    lines = promote_default_logo(lines)
     out: list[str] = []
     in_list = False
     for raw in lines:
@@ -147,7 +156,7 @@ def markdown_body(source: str, *, omit_intro: bool = False) -> str:
             if not in_list:
                 out.append("<ul>")
                 in_list = True
-            out.append(f"<li>{list_item(line[2:])}</li>")
+            out.append(f"<li>{inline_markdown(line[2:])}</li>")
             continue
         if in_list:
             out.append("</ul>")
@@ -155,35 +164,91 @@ def markdown_body(source: str, *, omit_intro: bool = False) -> str:
         if not line:
             continue
         if line.startswith("## "):
-            heading = line[3:]
             out.append('<hr aria-hidden="true">')
-            out.append(f"<h2>{html.escape(heading)}</h2>")
-            if heading == "Color Pallete:":
-                out.append('<div class="notice"><strong>Accent color note:</strong> NEVER use Accent Medium or Accent Dark unless absolutely necessary. Use either color only as a fallback when Brand Primary or Accent creates a contrast issue.</div>')
+            out.append(f"<h2>{inline_markdown(line[3:])}</h2>")
         elif line.startswith("# "):
-            out.append(f"<h1>{html.escape(line[2:])}</h1>")
+            out.append(f"<h1>{inline_markdown(line[2:])}</h1>")
+        elif line.startswith("> "):
+            out.append(f'<div class="notice">{inline_markdown(line[2:])}</div>')
         else:
-            out.append(f"<p>{linkify(line)}</p>")
+            out.append(f"<p>{inline_markdown(line)}</p>")
     if in_list:
         out.append("</ul>")
     return "\n".join(out)
 
 
+def sync_skill_files(source: str, version: str) -> None:
+    SKILL_REFERENCE.parent.mkdir(parents=True, exist_ok=True)
+    SKILL_REFERENCE.write_text(source)
+    SKILL.write_text(f'''---
+name: fl-brand-guide
+description: "Official Fuel Logic visual brand standards. MUST use for any Fuel Logic design, visual explanation, HTML report, document, presentation, webpage, email design, social graphic, video graphic, PDF, or other branded artifact. Applies across Pi, Codex, Claude Code, and other Agent Skills-compatible harnesses."
+license: Proprietary Fuel Logic brand standards and assets
+compatibility: Works in any harness that supports the Agent Skills standard; browser access is useful for public logo assets and the live guide.
+metadata:
+  brand: Fuel Logic
+  version: "{version}"
+  guide: https://xammis.github.io/fl-brand-guide/
+---
+
+# Fuel Logic Brand Guide
+
+## Required canonical reference
+
+Before creating or editing any Fuel Logic artifact, read this file completely:
+
+```text
+references/fl-brand-guide.md
+```
+
+The reference is generated byte-for-byte from the repository's canonical `fl-brand-guide.md`. It contains every current typography, color, logo, navigation, link, button, spacing, surface, punctuation, nesting, responsive, and report-generation rule. Treat every rule in that reference as mandatory unless the user explicitly requests an exception.
+
+Public guide:
+
+```text
+https://xammis.github.io/fl-brand-guide/
+```
+
+Downloadable Markdown:
+
+```text
+https://xammis.github.io/fl-brand-guide/fl-brand-guide.md
+```
+
+## Execution workflow
+
+1. Read `references/fl-brand-guide.md` fresh before every Fuel Logic visual pass.
+2. Resolve logo and asset URLs exactly as provided by the reference.
+3. Read source content separately from any previous rendered output.
+4. Generate visual reports from scratch. Do not copy styling or layout from a previous pass.
+5. Check the finished artifact against every section of the canonical reference.
+6. Publish user-viewable reports through the required verified public delivery workflow.
+
+## Sync contract
+
+Do not maintain a second copy of visual standards in this file. The canonical Markdown is the sole standards source. The repository build synchronizes that Markdown into this skill reference and generates the public page from the same content. Repository verification fails if any generated artifact drifts.
+''')
+
+
 def page(title: str, body: str, depth: int = 0) -> str:
     prefix = "../" * depth
     logo = f"{prefix}logos/digital/png/primary-logos/fl-logo-horizontal.png"
+    _, version, _ = guide_metadata(GUIDE.read_text())
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)} · Fuel Logic</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>{STYLE}</style></head><body><div class="topline"></div><div class="shell">
-<header class="header"><a href="{prefix}"><img src="{logo}" alt="Fuel Logic"></a><nav class="nav"><a href="{prefix}">Brand guide</a><a href="{prefix}logos/">All logos</a><a href="{prefix}fl-brand-guide.md">Markdown</a><a href="https://github.com/Xammis/fl-brand-guide">GitHub</a><a class="button" href="https://github.com/Xammis/fl-brand-guide/tree/main/skills/fl-brand-guide">Install Skill</a></nav></header>
-{body}<footer class="footer">Fuel Logic Brand Guide v1.0 · Public standards for people and AI agents</footer></div></body></html>'''
+<header class="header"><a href="{prefix}"><img src="{logo}" alt="Fuel Logic"></a><nav class="nav"><a href="{prefix}">Brand guide</a><a href="{prefix}logos/">All logos</a><a href="{prefix}fl-brand-guide.md" download="fl-brand-guide.md">Markdown</a><a href="https://github.com/Xammis/fl-brand-guide">GitHub</a><a class="button" href="https://github.com/Xammis/fl-brand-guide/tree/main/skills/fl-brand-guide">Install Skill</a></nav></header>
+{body}<footer class="footer">Fuel Logic Brand Guide v{version} · Public standards for people and AI agents</footer></div></body></html>'''
 
 
 def build_home() -> None:
-    body = f'''<section class="hero"><div class="eyebrow home-eyebrow">Official standards · v1.0</div><h1>Fuel Logic <span class="accent">Brand Guide</span></h1><p class="lead">One public source for the people and AI agents creating Fuel Logic designs, documents, reports, and digital experiences.</p><div class="actions"><a class="button" href="logos/">Browse logos</a><a class="button secondary" href="fl-brand-guide.md">Open raw Markdown</a><a class="button secondary" href="https://github.com/Xammis/fl-brand-guide/tree/main/skills/fl-brand-guide">Install AI skill</a></div></section><article class="guide">{markdown_body(GUIDE.read_text(), omit_intro=True)}</article>'''
+    source = GUIDE.read_text()
+    display_title, version, intro = guide_metadata(source)
+    title_html = html.escape(display_title).replace("Brand Guide", '<span class="accent">Brand Guide</span>')
+    body = f'''<section class="hero"><div class="eyebrow home-eyebrow">Official standards · v{version}</div><h1>{title_html}</h1><p class="lead">{inline_markdown(intro)}</p><div class="actions"><a class="button" href="logos/">Browse logos</a><a class="button secondary" href="fl-brand-guide.md" download="fl-brand-guide.md">Download fl-brand-guide.md</a><a class="button secondary" href="https://github.com/Xammis/fl-brand-guide/tree/main/skills/fl-brand-guide">Install AI skill</a></div></section><article class="guide">{markdown_body(source, omit_intro=True)}</article>'''
     (ROOT / "index.html").write_text(page("Brand Guide", body))
 
 
@@ -255,6 +320,9 @@ def build_virtual_fallback() -> None:
 
 
 def main() -> None:
+    source = GUIDE.read_text()
+    _, version, _ = guide_metadata(source)
+    sync_skill_files(source, version)
     build_home()
     for directory in sorted([LOGOS, *[p for p in LOGOS.rglob("*") if p.is_dir()]], key=lambda p: len(p.parts), reverse=True):
         build_directory(directory)
