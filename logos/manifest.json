@@ -1,0 +1,516 @@
+{
+  "version": 1,
+  "source": "Dropbox Fuel Logic logo collection",
+  "files": [
+    {
+      "source": "Web/Compressed for Web/Artboard 37.webp",
+      "path": "logos/digital/compressed-for-web/artboard-37.webp",
+      "bytes": 17646,
+      "sha256": "fe60e2491b582652ff72af7f863fc365bdb0eb5d9d8e5aaeae901c92cee97508"
+    },
+    {
+      "source": "Web/Compressed for Web/Artboard 38.webp",
+      "path": "logos/digital/compressed-for-web/artboard-38.webp",
+      "bytes": 17138,
+      "sha256": "85cb7d08f8c73250a7a23d2f18d88b133fea0b3b579e73a24e575b99f562a269"
+    },
+    {
+      "source": "Web/Compressed for Web/FL Logo Badge Black.webp",
+      "path": "logos/digital/compressed-for-web/fl-logo-badge-black.webp",
+      "bytes": 17404,
+      "sha256": "ee76876f17e4f4cc2a45cc8363fd6f1b87d652b8b32991a2c550ffd11993f8bc"
+    },
+    {
+      "source": "Web/Compressed for Web/FL Logo Badge White.webp",
+      "path": "logos/digital/compressed-for-web/fl-logo-badge-white.webp",
+      "bytes": 17404,
+      "sha256": "05a0821ebc272a02bb9b173fda9bc4425d1bc0a02cdaf6995fb2ceaf8283722b"
+    },
+    {
+      "source": "Web/Compressed for Web/FL Logo Badge.webp",
+      "path": "logos/digital/compressed-for-web/fl-logo-badge.webp",
+      "bytes": 17532,
+      "sha256": "d82db5576eabbf8bf3e89ca7e2edd2e9001b17ceaa677bf832575e8b8e9bf30f"
+    },
+    {
+      "source": "Web/Compressed for Web/FL Logo Centered Black.webp",
+      "path": "logos/digital/compressed-for-web/fl-logo-centered-black.webp",
+      "bytes": 19346,
+      "sha256": "eef26e29970a214125cd88de13495bb9dac69ee7a6be56c92a465336a083d30d"
+    },
+    {
+      "source": "Web/Compressed for Web/FL Logo Centered for Dark Bg.webp",
+      "path": "logos/digital/compressed-for-web/fl-logo-centered-for-dark-bg.webp",
+      "bytes": 19440,
+      "sha256": "4bd259a801071cc1cdb378c44e50b9ce8d6f6f1f85d20d3d5d8f66a6083c993e"
+    },
+    {
+      "source": "Web/Compressed for Web/FL Logo Centered White.webp",
+      "path": "logos/digital/compressed-for-web/fl-logo-centered-white.webp",
+      "bytes": 19346,
+      "sha256": "79fbe6c6f6772af47257f7481d64e99a863888bd604bd1f06bec341f61489111"
+    },
+    {
+      "source": "Web/Compressed for Web/FL Logo Centered.webp",
+      "path": "logos/digital/compressed-for-web/fl-logo-centered.webp",
+      "bytes": 19496,
+      "sha256": "45873c77f1e195755cf14f541631b8fbf040d0d76c7b1a952a56850f69cf708c"
+    },
+    {
+      "source": "Web/Compressed for Web/FL Logo Horiozntal Black.webp",
+      "path": "logos/digital/compressed-for-web/fl-logo-horiozntal-black.webp",
+      "bytes": 19338,
+      "sha256": "847fb5d7562f60deb96c021f9ec830ab3437225873ca3e9df97ae0aa6affef83"
+    },
+    {
+      "source": "Web/Compressed for Web/FL Logo Horizontal for Dark Bg.webp",
+      "path": "logos/digital/compressed-for-web/fl-logo-horizontal-for-dark-bg.webp",
+      "bytes": 19482,
+      "sha256": "fe048b0e474c5543032b2d158696ccbced91631ed51c4098239ca1da1c5eec0f"
+    },
+    {
+      "source": "Web/Compressed for Web/FL Logo Horizontal White.webp",
+      "path": "logos/digital/compressed-for-web/fl-logo-horizontal-white.webp",
+      "bytes": 19338,
+      "sha256": "3fd8fb88171f903262cfef00e49e68465c6fdb2340c599803db2533a6ff3ded3"
+    },
+    {
+      "source": "Web/Compressed for Web/FL Logo Horizontal wTagline for Dark Bg.webp",
+      "path": "logos/digital/compressed-for-web/fl-logo-horizontal-wtagline-for-dark-bg.webp",
+      "bytes": 21350,
+      "sha256": "fb572044655e62dcaf6d6d4485a66f5a279a7a8718f68c4758b9ffecb86270ba"
+    },
+    {
+      "source": "Web/Compressed for Web/FL Logo Horizontal wTagline.webp",
+      "path": "logos/digital/compressed-for-web/fl-logo-horizontal-wtagline.webp",
+      "bytes": 21362,
+      "sha256": "e31aff234966d599062fd2ee87ea36dbcc6c80cef05962a0cc78786c38d2800f"
+    },
+    {
+      "source": "Web/Compressed for Web/FL Logo Horizontal.webp",
+      "path": "logos/digital/compressed-for-web/fl-logo-horizontal.webp",
+      "bytes": 19472,
+      "sha256": "832dcb3cc1ac0ae6f306915a12a1b1122e8d8cbcc524f816928cd280acac89b4"
+    },
+    {
+      "source": "Web/Compressed for Web/FL Logo Vertical Black.webp",
+      "path": "logos/digital/compressed-for-web/fl-logo-vertical-black.webp",
+      "bytes": 20366,
+      "sha256": "93c5d3484c614bb304f8d7aaa7bd5e997d17eab66880adfd42c7bddeee10fbfb"
+    },
+    {
+      "source": "Web/Compressed for Web/FL Logo Vertical for Dark Bg.webp",
+      "path": "logos/digital/compressed-for-web/fl-logo-vertical-for-dark-bg.webp",
+      "bytes": 20398,
+      "sha256": "99d74aaf2442bd8e74fc860fa3faf56a1120ef59c77ae7e1663380f84d5e577f"
+    },
+    {
+      "source": "Web/Compressed for Web/FL Logo Vertical White.webp",
+      "path": "logos/digital/compressed-for-web/fl-logo-vertical-white.webp",
+      "bytes": 20366,
+      "sha256": "94ff43071ae57b144b9883c32f289b0b91b97d2cc888749d0ff1d049c0808b69"
+    },
+    {
+      "source": "Web/Compressed for Web/FL Logo Vertical wTagline for Dark Bg.webp",
+      "path": "logos/digital/compressed-for-web/fl-logo-vertical-wtagline-for-dark-bg.webp",
+      "bytes": 22230,
+      "sha256": "98d3550f6449eb52274dc8a8c9a8db317ff7434c5a9dd1217dbb159360292d3f"
+    },
+    {
+      "source": "Web/Compressed for Web/FL Logo Vertical wTagline.webp",
+      "path": "logos/digital/compressed-for-web/fl-logo-vertical-wtagline.webp",
+      "bytes": 22242,
+      "sha256": "84a19a3e50addebbe0ba317eafef758203815d7dfa69cf7d699044c9ff0fff0a"
+    },
+    {
+      "source": "Web/Compressed for Web/FL Logo Vertical.webp",
+      "path": "logos/digital/compressed-for-web/fl-logo-vertical.webp",
+      "bytes": 20410,
+      "sha256": "eb6ecbf2da0bb7884e0c9317480cec74472bc7dca6b0040c284a18dfd04d170c"
+    },
+    {
+      "source": "Web/PNG/02 Alternate Logos/B&W/FL Logo Badge Black.png",
+      "path": "logos/digital/png/alternate-logos/black-and-white/fl-logo-badge-black.png",
+      "bytes": 30754,
+      "sha256": "d9f56717b99a00fa1f8f8c0280a97f2bc6683a46d501f7bef469cbf706729123"
+    },
+    {
+      "source": "Web/PNG/02 Alternate Logos/B&W/FL Logo Badge White.png",
+      "path": "logos/digital/png/alternate-logos/black-and-white/fl-logo-badge-white.png",
+      "bytes": 30604,
+      "sha256": "bf0c4885b4c9b35ff6e6b40eae52f80cd781175379ba880ab6c735e858030d6a"
+    },
+    {
+      "source": "Web/PNG/02 Alternate Logos/B&W/FL Logo Centered Black.png",
+      "path": "logos/digital/png/alternate-logos/black-and-white/fl-logo-centered-black.png",
+      "bytes": 37118,
+      "sha256": "a97ac5354cb0e0355ed082c07dadb969f709f2b95dbcdead19f4de4cfe7254d5"
+    },
+    {
+      "source": "Web/PNG/02 Alternate Logos/B&W/FL Logo Centered White.png",
+      "path": "logos/digital/png/alternate-logos/black-and-white/fl-logo-centered-white.png",
+      "bytes": 36548,
+      "sha256": "ce451956f3bb4a212223c85121f3c24a0195ed577366bb420a55f510836debfd"
+    },
+    {
+      "source": "Web/PNG/02 Alternate Logos/B&W/FL Logo Horiozntal Black.png",
+      "path": "logos/digital/png/alternate-logos/black-and-white/fl-logo-horiozntal-black.png",
+      "bytes": 37279,
+      "sha256": "dd0f5ec3a9bcd8781af3107cfd3c09053c473891d2ab61eaf67961e87a196cae"
+    },
+    {
+      "source": "Web/PNG/02 Alternate Logos/B&W/FL Logo Horizontal White.png",
+      "path": "logos/digital/png/alternate-logos/black-and-white/fl-logo-horizontal-white.png",
+      "bytes": 36301,
+      "sha256": "737f953e9d54837d63d9f1ab169210957fdc2d6ea8350fa44767a8b26114547f"
+    },
+    {
+      "source": "Web/PNG/02 Alternate Logos/B&W/FL Logo Vertical Black.png",
+      "path": "logos/digital/png/alternate-logos/black-and-white/fl-logo-vertical-black.png",
+      "bytes": 73700,
+      "sha256": "914c900d7c0e1dc3c0d7e46374cda22f8c5db683757e2ad833c0e987411f7b15"
+    },
+    {
+      "source": "Web/PNG/02 Alternate Logos/B&W/FL Logo Vertical White.png",
+      "path": "logos/digital/png/alternate-logos/black-and-white/fl-logo-vertical-white.png",
+      "bytes": 73388,
+      "sha256": "7bdaea1caf06f673ac4d0fd8bb63ede040febc79a3d3a68f34552ca426bd4879"
+    },
+    {
+      "source": "Web/PNG/02 Alternate Logos/FL-Basecamp-Badge.png",
+      "path": "logos/digital/png/alternate-logos/fl-basecamp-badge.png",
+      "bytes": 69774,
+      "sha256": "fa341b77e95dd1ca2bc1f0f6215a6427d1c98cdecdd48ba09e1e0c711f07e92b"
+    },
+    {
+      "source": "Web/PNG/02 Alternate Logos/FL Logo Badge - Circle Profile.png",
+      "path": "logos/digital/png/alternate-logos/fl-logo-badge-circle-profile.png",
+      "bytes": 26964,
+      "sha256": "749f21021f3a0469db81241c5cf65be7348b16c8a246fe41667b5de45e36a15b"
+    },
+    {
+      "source": "Web/PNG/02 Alternate Logos/FL Logo Centered for Dark Bg.png",
+      "path": "logos/digital/png/alternate-logos/fl-logo-centered-for-dark-bg.png",
+      "bytes": 38232,
+      "sha256": "79d1898480c9e33c88da8e816839d178951c09eed0a4236b141ba6d40985922e"
+    },
+    {
+      "source": "Web/PNG/02 Alternate Logos/FL Logo Horizontal for Dark Bg.png",
+      "path": "logos/digital/png/alternate-logos/fl-logo-horizontal-for-dark-bg.png",
+      "bytes": 38956,
+      "sha256": "bbffffb00814ba2759abdf15200de65e6ffaa59b715ad72f36364f7eee9e8d65"
+    },
+    {
+      "source": "Web/PNG/02 Alternate Logos/FL Logo Horizontal wTagline for Dark Bg.png",
+      "path": "logos/digital/png/alternate-logos/fl-logo-horizontal-wtagline-for-dark-bg.png",
+      "bytes": 49323,
+      "sha256": "e3855ed0e4ccff37f960d3429acde66d1205be0bdd6aa7907580198cc3117b73"
+    },
+    {
+      "source": "Web/PNG/02 Alternate Logos/FL Logo Vertical for Dark Bg.png",
+      "path": "logos/digital/png/alternate-logos/fl-logo-vertical-for-dark-bg.png",
+      "bytes": 76071,
+      "sha256": "1c14496c5d54085021de246cd14966e5e99c487d379cddfc0820a46d50701202"
+    },
+    {
+      "source": "Web/PNG/02 Alternate Logos/FL Logo Vertical wTagline for Dark Bg.png",
+      "path": "logos/digital/png/alternate-logos/fl-logo-vertical-wtagline-for-dark-bg.png",
+      "bytes": 95835,
+      "sha256": "8e49ba6e709cc740d3bdfccef726edd1b90cb2893c65dda4f38aca6fbd790ed2"
+    },
+    {
+      "source": "Web/PNG/01 Primary Logos/FL Favicon.png",
+      "path": "logos/digital/png/primary-logos/fl-favicon.png",
+      "bytes": 9050,
+      "sha256": "05c6eab49fb5606697a5530fa50e940a2dbe540fe4fe8b3a132e012c1735861f"
+    },
+    {
+      "source": "Web/PNG/01 Primary Logos/FL Logo Badge.png",
+      "path": "logos/digital/png/primary-logos/fl-logo-badge.png",
+      "bytes": 31526,
+      "sha256": "4408549433f5fae5631ad8f8f131313f417dc1588f5cb7634108a2ffbfb666e2"
+    },
+    {
+      "source": "Web/PNG/01 Primary Logos/FL Logo Centered.png",
+      "path": "logos/digital/png/primary-logos/fl-logo-centered.png",
+      "bytes": 38990,
+      "sha256": "21f3b8193a51f4e5528d48a05925d1bb7eb01f6c4894629775f36674926ae839"
+    },
+    {
+      "source": "Web/PNG/01 Primary Logos/FL Logo Horizontal wTagline Xmas.png",
+      "path": "logos/digital/png/primary-logos/fl-logo-horizontal-wtagline-xmas.png",
+      "bytes": 65692,
+      "sha256": "5e902cf41562bf16cc9d971605e24e0773216daf3e74b075b1f8e9091a195d54"
+    },
+    {
+      "source": "Web/PNG/01 Primary Logos/FL Logo Horizontal wTagline.png",
+      "path": "logos/digital/png/primary-logos/fl-logo-horizontal-wtagline.png",
+      "bytes": 49802,
+      "sha256": "610160936a9d5c83f5f26a032c6f6a7332e4716b4a1aabf2cdda25ee679bc82a"
+    },
+    {
+      "source": "Web/PNG/01 Primary Logos/FL Logo Horizontal.png",
+      "path": "logos/digital/png/primary-logos/fl-logo-horizontal.png",
+      "bytes": 39138,
+      "sha256": "b86a258ada5e4e31aac3a667fca20a5b5e790e8d80c518e1a8e919a43890d154"
+    },
+    {
+      "source": "Web/PNG/01 Primary Logos/FL Logo Vertical wTagline.png",
+      "path": "logos/digital/png/primary-logos/fl-logo-vertical-wtagline.png",
+      "bytes": 96594,
+      "sha256": "d9f37a01ad49c2351e5be4c5f84cab258890e2d64c36477896e1149a981bda44"
+    },
+    {
+      "source": "Web/PNG/01 Primary Logos/FL Logo Vertical.png",
+      "path": "logos/digital/png/primary-logos/fl-logo-vertical.png",
+      "bytes": 76753,
+      "sha256": "6ed89437dea7a52bcc4d37552b46344219c90a4d0a14e88cae804f58f82dc3cd"
+    },
+    {
+      "source": "Web/WEBP/02 Alternate Logos/B&W/FL Logo Badge Black.webp",
+      "path": "logos/digital/webp/alternate-logos/black-and-white/fl-logo-badge-black.webp",
+      "bytes": 9560,
+      "sha256": "32758e31ac9cab09c11bb999e81fbb460f3aeae00cb5a4fc665c2bdcdf2612db"
+    },
+    {
+      "source": "Web/WEBP/02 Alternate Logos/B&W/FL Logo Badge White.webp",
+      "path": "logos/digital/webp/alternate-logos/black-and-white/fl-logo-badge-white.webp",
+      "bytes": 9574,
+      "sha256": "fc521e6b66c05bf561fafcae717a042a0709fec85f418fb8307e9fd960e3d0cb"
+    },
+    {
+      "source": "Web/WEBP/02 Alternate Logos/B&W/FL Logo Centered Black.webp",
+      "path": "logos/digital/webp/alternate-logos/black-and-white/fl-logo-centered-black.webp",
+      "bytes": 18304,
+      "sha256": "61567e482f9e4adb55f8696edbf6cc78a323614445a83817a05bac3fab18b87c"
+    },
+    {
+      "source": "Web/WEBP/02 Alternate Logos/B&W/FL Logo Centered White.webp",
+      "path": "logos/digital/webp/alternate-logos/black-and-white/fl-logo-centered-white.webp",
+      "bytes": 18304,
+      "sha256": "b247e41f3c747b62f53b8761b205424ae86add423e32796f9e50fd4b702e7424"
+    },
+    {
+      "source": "Web/WEBP/02 Alternate Logos/B&W/FL Logo Horiozntal Black.webp",
+      "path": "logos/digital/webp/alternate-logos/black-and-white/fl-logo-horiozntal-black.webp",
+      "bytes": 17052,
+      "sha256": "1eb5e01473e9a891cd6aff63c9f8dec4ba284725ad3bd03c21d45ccace08a0b5"
+    },
+    {
+      "source": "Web/WEBP/02 Alternate Logos/B&W/FL Logo Horizontal White.webp",
+      "path": "logos/digital/webp/alternate-logos/black-and-white/fl-logo-horizontal-white.webp",
+      "bytes": 17054,
+      "sha256": "112ddfb321a9e8783a7535009050ea1622984d8b52a51129ab1f477fa837402c"
+    },
+    {
+      "source": "Web/WEBP/02 Alternate Logos/B&W/FL Logo Vertical Black.webp",
+      "path": "logos/digital/webp/alternate-logos/black-and-white/fl-logo-vertical-black.webp",
+      "bytes": 20668,
+      "sha256": "f3e1d1034ce845918817d134105d55e6e1f282cda38b065806a5860f59936cdf"
+    },
+    {
+      "source": "Web/WEBP/02 Alternate Logos/B&W/FL Logo Vertical White.webp",
+      "path": "logos/digital/webp/alternate-logos/black-and-white/fl-logo-vertical-white.webp",
+      "bytes": 20442,
+      "sha256": "8c47f534d4c3f692ecf9defef09e92709ad303fdb48eae275525ba5015d25c94"
+    },
+    {
+      "source": "Web/WEBP/02 Alternate Logos/FL Logo Centered for Dark Bg.webp",
+      "path": "logos/digital/webp/alternate-logos/fl-logo-centered-for-dark-bg.webp",
+      "bytes": 17896,
+      "sha256": "e7da7a8b9aa36a91dfa4b85e436acd281220939edfd2a7153728bc0c285dea0c"
+    },
+    {
+      "source": "Web/WEBP/02 Alternate Logos/FL Logo Horizontal for Dark Bg.webp",
+      "path": "logos/digital/webp/alternate-logos/fl-logo-horizontal-for-dark-bg.webp",
+      "bytes": 17920,
+      "sha256": "4b466a92d47e0eb747c415842caa1d52b00395d79e4a38c17f60ef106ef714b3"
+    },
+    {
+      "source": "Web/WEBP/02 Alternate Logos/FL Logo Horizontal wTagline for Dark Bg.webp",
+      "path": "logos/digital/webp/alternate-logos/fl-logo-horizontal-wtagline-for-dark-bg.webp",
+      "bytes": 38022,
+      "sha256": "11138908e9c93b0f0d14bfa455555176953b84716f1d1defcf232b929910fc8c"
+    },
+    {
+      "source": "Web/WEBP/02 Alternate Logos/FL Logo Vertical for Dark Bg.webp",
+      "path": "logos/digital/webp/alternate-logos/fl-logo-vertical-for-dark-bg.webp",
+      "bytes": 20720,
+      "sha256": "a279943c85a5dfad0f8d63990af0d3c84cc543d018ca477c00c9f0e2eaa8d411"
+    },
+    {
+      "source": "Web/WEBP/02 Alternate Logos/FL Logo Vertical wTagline for Dark Bg.webp",
+      "path": "logos/digital/webp/alternate-logos/fl-logo-vertical-wtagline-for-dark-bg.webp",
+      "bytes": 28756,
+      "sha256": "b9240c2248f68a99e4cc31df76000219edc3f134278a12d0c3e2238d74d807ce"
+    },
+    {
+      "source": "Web/WEBP/01 Primary Logos/FL Logo Badge.webp",
+      "path": "logos/digital/webp/primary-logos/fl-logo-badge.webp",
+      "bytes": 9512,
+      "sha256": "3693e38ac4013e2653ed42f192bfa1f4c157c1f0c2683cd7e24fb3231882537c"
+    },
+    {
+      "source": "Web/WEBP/01 Primary Logos/FL Logo Centered.webp",
+      "path": "logos/digital/webp/primary-logos/fl-logo-centered.webp",
+      "bytes": 18186,
+      "sha256": "269124ebe82621ba0acd7b97914b71c99d93ad537e9d12f112062e281e0f834b"
+    },
+    {
+      "source": "Web/WEBP/01 Primary Logos/FL Logo Horizontal wTagline.webp",
+      "path": "logos/digital/webp/primary-logos/fl-logo-horizontal-wtagline.webp",
+      "bytes": 25418,
+      "sha256": "6f1a785b23c5a7ba68808f3ee60f341f01fda4440ce4ff21c61a509a2aed87c2"
+    },
+    {
+      "source": "Web/WEBP/01 Primary Logos/FL Logo Horizontal.webp",
+      "path": "logos/digital/webp/primary-logos/fl-logo-horizontal.webp",
+      "bytes": 18002,
+      "sha256": "859299cf4fc4e83eca0d0fa5182503946ca9eb06339e6c6160be84d29ab2f766"
+    },
+    {
+      "source": "Web/WEBP/01 Primary Logos/FL Logo Vertical wTagline.webp",
+      "path": "logos/digital/webp/primary-logos/fl-logo-vertical-wtagline.webp",
+      "bytes": 27964,
+      "sha256": "eca317aaf5c73071c300c7a34cfda56914c99beaabd77ea0a80514a617a71d26"
+    },
+    {
+      "source": "Web/WEBP/01 Primary Logos/FL Logo Vertical.webp",
+      "path": "logos/digital/webp/primary-logos/fl-logo-vertical.webp",
+      "bytes": 20836,
+      "sha256": "7d889fdbf949432d09702f89bc2f341924ceb5303e1ccf668302c02c640203c4"
+    },
+    {
+      "source": "Hi-Res Print/PDF/02 Alternate Logos/B&W/FL Logo Badge Black.pdf",
+      "path": "logos/print/pdf/alternate-logos/black-and-white/fl-logo-badge-black.pdf",
+      "bytes": 59993,
+      "sha256": "5bf2ac8e52dafea0438c4634782a138529d01c19245794bc1284f012ef7684a8"
+    },
+    {
+      "source": "Hi-Res Print/PDF/02 Alternate Logos/B&W/FL Logo Badge White.pdf",
+      "path": "logos/print/pdf/alternate-logos/black-and-white/fl-logo-badge-white.pdf",
+      "bytes": 59984,
+      "sha256": "a3df1fa5a0bb3c827b71145c23af78f373e181cf42275e6e3b840e13f417fe50"
+    },
+    {
+      "source": "Hi-Res Print/PDF/02 Alternate Logos/B&W/FL Logo Centered Black.pdf",
+      "path": "logos/print/pdf/alternate-logos/black-and-white/fl-logo-centered-black.pdf",
+      "bytes": 60810,
+      "sha256": "a8d901525b891d661c0a4a72f9b7dc11bba67d6edf9d010fc4a02a4b1cc01396"
+    },
+    {
+      "source": "Hi-Res Print/PDF/02 Alternate Logos/B&W/FL Logo Centered White.pdf",
+      "path": "logos/print/pdf/alternate-logos/black-and-white/fl-logo-centered-white.pdf",
+      "bytes": 60806,
+      "sha256": "64540c6996e009be0b8ddf67722315bea52da97a73382bc204aa26c8544529f6"
+    },
+    {
+      "source": "Hi-Res Print/PDF/02 Alternate Logos/B&W/FL Logo Horiozntal Black.pdf",
+      "path": "logos/print/pdf/alternate-logos/black-and-white/fl-logo-horiozntal-black.pdf",
+      "bytes": 60747,
+      "sha256": "9754ea07d8869bf7e40f29400a60097aa6403e9a7364368c82bbcb5155e2e951"
+    },
+    {
+      "source": "Hi-Res Print/PDF/02 Alternate Logos/B&W/FL Logo Horizontal White.pdf",
+      "path": "logos/print/pdf/alternate-logos/black-and-white/fl-logo-horizontal-white.pdf",
+      "bytes": 60813,
+      "sha256": "0c01d7b777dff3bdb85c6694a84e9bc68785b83880248ed7400d8e66666bb1c3"
+    },
+    {
+      "source": "Hi-Res Print/PDF/02 Alternate Logos/B&W/FL Logo Vertical Black.pdf",
+      "path": "logos/print/pdf/alternate-logos/black-and-white/fl-logo-vertical-black.pdf",
+      "bytes": 60824,
+      "sha256": "6008a687a4556c8982c4023d9fa8607ef632e0320863744ee26de3d1428a6fb0"
+    },
+    {
+      "source": "Hi-Res Print/PDF/02 Alternate Logos/B&W/FL Logo Vertical White.pdf",
+      "path": "logos/print/pdf/alternate-logos/black-and-white/fl-logo-vertical-white.pdf",
+      "bytes": 60821,
+      "sha256": "80db79320270b5ecf67d3250d6099681ea622c5f5916c42d22a2d4b084b0264a"
+    },
+    {
+      "source": "Hi-Res Print/PDF/02 Alternate Logos/FL Logo Centered for Dark Bg.pdf",
+      "path": "logos/print/pdf/alternate-logos/fl-logo-centered-for-dark-bg.pdf",
+      "bytes": 60980,
+      "sha256": "62b1bf753c2007beec2f6be5c35f1769e06db319bfef5be375d49b4446ccc4ef"
+    },
+    {
+      "source": "Hi-Res Print/PDF/02 Alternate Logos/FL Logo Horizontal for Dark Bg.pdf",
+      "path": "logos/print/pdf/alternate-logos/fl-logo-horizontal-for-dark-bg.pdf",
+      "bytes": 60991,
+      "sha256": "007a7245609331947abfe69108c3566d26a8b58cf90d5d9e3e1c3536f78ba69c"
+    },
+    {
+      "source": "Hi-Res Print/PDF/02 Alternate Logos/FL Logo Horizontal wTagline for Dark Bg.pdf",
+      "path": "logos/print/pdf/alternate-logos/fl-logo-horizontal-wtagline-for-dark-bg.pdf",
+      "bytes": 66787,
+      "sha256": "1242f71f1d0f475b51363f248d54e076f30f93f192317ba80f36e4f20eae3b64"
+    },
+    {
+      "source": "Hi-Res Print/PDF/02 Alternate Logos/FL Logo Vertical for Dark Bg.pdf",
+      "path": "logos/print/pdf/alternate-logos/fl-logo-vertical-for-dark-bg.pdf",
+      "bytes": 61019,
+      "sha256": "cfe4b8adf70de9c2376782f460cf1cb3700db6ca74630c3298681cf649c14829"
+    },
+    {
+      "source": "Hi-Res Print/PDF/02 Alternate Logos/FL Logo Vertical wTagline for Dark Bg.pdf",
+      "path": "logos/print/pdf/alternate-logos/fl-logo-vertical-wtagline-for-dark-bg.pdf",
+      "bytes": 66791,
+      "sha256": "8cb371c1e3feb0b7712a8c57e2a2accae6a3eadcfb6e6a308c34d065718a7783"
+    },
+    {
+      "source": "Hi-Res Print/PDF/01 Primary Logos/FL Logo Badge.pdf",
+      "path": "logos/print/pdf/primary-logos/fl-logo-badge.pdf",
+      "bytes": 60152,
+      "sha256": "71f4467e17f7d186799d23817f743c2f04a0d9780755d69f907eec790cb5a005"
+    },
+    {
+      "source": "Hi-Res Print/PDF/01 Primary Logos/FL Logo Centered.pdf",
+      "path": "logos/print/pdf/primary-logos/fl-logo-centered.pdf",
+      "bytes": 60991,
+      "sha256": "1ef83c225e2bdacada973e871b93265382c8bc540c99f6c783a90c4b72d50c41"
+    },
+    {
+      "source": "Hi-Res Print/PDF/01 Primary Logos/FL Logo Horizontal wTagline Xmas.pdf",
+      "path": "logos/print/pdf/primary-logos/fl-logo-horizontal-wtagline-xmas.pdf",
+      "bytes": 264958,
+      "sha256": "fefdf686f2022b2cfc0e316380d568489393cdc801f1d45c454efcdc5a43c194"
+    },
+    {
+      "source": "Hi-Res Print/PDF/01 Primary Logos/FL Logo Horizontal wTagline.pdf",
+      "path": "logos/print/pdf/primary-logos/fl-logo-horizontal-wtagline.pdf",
+      "bytes": 66751,
+      "sha256": "2f5d31288c1106d867306daeb51552c90aa7e052de8a7a10e137a08dfce2de54"
+    },
+    {
+      "source": "Hi-Res Print/PDF/01 Primary Logos/FL Logo Horizontal.pdf",
+      "path": "logos/print/pdf/primary-logos/fl-logo-horizontal.pdf",
+      "bytes": 60901,
+      "sha256": "de26f8d89b8a8d6cb34ef070ee990615e769d8fb7faeb6e3d6cd6ad638b68d92"
+    },
+    {
+      "source": "Hi-Res Print/PDF/01 Primary Logos/FL Logo Vertical Circle wTagline forDarkBG.pdf",
+      "path": "logos/print/pdf/primary-logos/fl-logo-vertical-circle-wtagline-fordarkbg.pdf",
+      "bytes": 8462,
+      "sha256": "7215289bbc7e4653ab62b4d1dd16ce5ac0089285a2be5fef8fc5e045eb3e3c48"
+    },
+    {
+      "source": "Hi-Res Print/PDF/01 Primary Logos/FL Logo Vertical Stacked wTagline forDarkBG.pdf",
+      "path": "logos/print/pdf/primary-logos/fl-logo-vertical-stacked-wtagline-fordarkbg.pdf",
+      "bytes": 8222,
+      "sha256": "b330381078ba8b3c47c973160dcc359f13b8728c19b030a69cc24d04a6b39ee5"
+    },
+    {
+      "source": "Hi-Res Print/PDF/01 Primary Logos/FL Logo Vertical wTagline.pdf",
+      "path": "logos/print/pdf/primary-logos/fl-logo-vertical-wtagline.pdf",
+      "bytes": 66778,
+      "sha256": "4cd5c50ebd66cd0fb3f7b3f436eefe8314388e956f7c8747718b53a3e4ff288b"
+    },
+    {
+      "source": "Hi-Res Print/PDF/01 Primary Logos/FL Logo Vertical.pdf",
+      "path": "logos/print/pdf/primary-logos/fl-logo-vertical.pdf",
+      "bytes": 60997,
+      "sha256": "9673f801e3fea521fd637f2f1eaa0ed4e99bae0ef05dee0c72f5eeba69832773"
+    }
+  ]
+}
