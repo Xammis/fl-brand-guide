@@ -32,10 +32,10 @@ STYLE = """
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--base); color: var(--contrast); font: 400 1.3rem/1.62 "Work Sans", sans-serif; }
-a { color: var(--accent-two); text-underline-offset: .16em; }
+a { color: var(--accent-two); text-decoration: none; }
 a:hover { color: var(--accent-two-dark); }
 h1,h2,h3,h4,h5,h6 { color: var(--contrast); font-family: "Work Sans", sans-serif; font-weight: 700; line-height: 1.08; letter-spacing: -.035em; text-wrap: balance; }
-h1 { font-size: clamp(3.1rem, calc(3.1rem + ((1vw - .2rem) * 1.5)), 4rem); margin: 0 0 1rem; }
+h1 { font-size: clamp(3.1rem, calc(3.1rem + ((1vw - .2rem) * 1.5)), 4rem); line-height: .9; margin: 0 0 1rem; }
 h2 { font-size: clamp(1.85rem, calc(1.85rem + ((1vw - .2rem) * 1.583)), 2.8rem); margin: 3rem 0 1rem; }
 h3 { font-size: 1.5rem; } h4,h5,h6 { font-size: 1.3rem; }
 small,.small { color: var(--contrast-three); font-size: .9rem; }
@@ -43,7 +43,7 @@ small,.small { color: var(--contrast-three); font-size: .9rem; }
 .shell { width: min(1140px, calc(100% - 32px)); margin: auto; padding: 42px 0 72px; }
 .header { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding-bottom: 34px; border-bottom: 1px solid var(--base-three); }
 .header img { width: min(390px, 52vw); height: auto; display: block; }
-.nav { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-left: auto; font-size: 1.3rem; font-weight: 500; }
+.nav { display: flex; align-items: center; gap: 27px; flex-wrap: wrap; margin-left: auto; font-size: 1.3rem; font-weight: 500; }
 .nav a:not(.button) { color: var(--contrast); text-decoration: none; }
 .nav a:not(.button):hover { color: var(--accent-two); }
 .hero { padding: clamp(42px, 8vw, 92px) 0 24px; max-width: 900px; }
@@ -61,28 +61,67 @@ small,.small { color: var(--contrast-three); font-size: .9rem; }
 .button:hover { background: var(--accent-medium); color: var(--base); }
 .button.secondary { background: var(--contrast); }
 .logo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; margin-top: 30px; }
-.logo-card { min-width: 0; border: 1px solid var(--base-three); border-radius: 12px; overflow: hidden; background: var(--base); }
+.logo-card { min-width: 0; border: 1px solid var(--base-three); border-radius: 1.5rem; overflow: hidden; background: var(--base); }
 .logo-preview { height: 210px; display: grid; place-items: center; padding: 22px; background-image: linear-gradient(45deg,var(--base-two) 25%,transparent 25%),linear-gradient(-45deg,var(--base-two) 25%,transparent 25%),linear-gradient(45deg,transparent 75%,var(--base-two) 75%),linear-gradient(-45deg,transparent 75%,var(--base-two) 75%); background-size: 24px 24px; background-position: 0 0,0 12px,12px -12px,-12px 0; }
 .logo-preview.dark { background: var(--contrast); }
-.logo-preview img { max-width: 100%; max-height: 164px; object-fit: contain; }
+.logo-preview img { max-width: 100%; max-height: 164px; border-radius: 1.5rem; object-fit: contain; }
 .logo-meta { padding: 15px; border-top: 1px solid var(--base-three); }
 .logo-meta b { display: block; font-size: .9rem; overflow-wrap: anywhere; }
 .logo-meta span { display: block; color: var(--contrast-three); font-size: .9rem; margin-top: 4px; }
 .folder-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr)); gap: 14px; margin: 28px 0; }
-.folder { display: block; padding: 20px; border-radius: 10px; background: var(--base-four); border: 1px solid color-mix(in srgb,var(--accent) 35%,var(--base-three)); color: var(--contrast); text-decoration: none; font-weight: 700; }
+.folder { display: block; padding: 20px; border-radius: 1.5rem; background: var(--base-four); border: 1px solid color-mix(in srgb,var(--accent) 35%,var(--base-three)); color: var(--contrast); text-decoration: none; font-weight: 700; }
 .folder:hover { background: var(--accent); color: var(--base); }
 .folder.recommended { background: var(--accent-two); border-color: var(--accent-two); color: var(--base); }
 .folder.recommended:hover { background: var(--accent-two-dark); }
 .folder-kicker { display: block; margin-bottom: 4px; color: var(--base); font-size: .9rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
-.notice { margin: 28px 0; padding: 18px 20px; background: var(--base-five); border-left: 5px solid var(--accent-two); }
+.notice { margin: 28px 0; padding: 18px 20px; border-radius: 1.5rem; background: var(--base-five); border-left: 5px solid var(--accent-two); }
 .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--base-three); color: var(--contrast-three); font-size: .9rem; }
-@media(max-width:700px){.header{align-items:flex-start;flex-direction:column}.shell{width:min(100% - 24px,1140px)}.logo-grid{grid-template-columns:1fr}.logo-preview{height:180px}}
+@media(max-width:1050px){
+  .header { align-items: flex-start; flex-direction: column; }
+  .header img { width: min(330px, 65vw); }
+  .nav { display: grid; grid-template-columns: repeat(5, max-content); justify-content: space-between; width: 100%; margin-left: 0; gap: 18px; }
+}
+@media(max-width:700px){
+  .shell { width: min(100% - 24px, 1140px); padding-top: 28px; }
+  .header { gap: 22px; padding-bottom: 26px; }
+  .header img { width: min(300px, 76vw); }
+  .nav { grid-template-columns: 1fr 1fr; gap: 6px 18px; }
+  .nav a { display: flex; align-items: center; min-height: 48px; }
+  .nav .button { grid-column: 1 / -1; width: 100%; margin-top: 6px; }
+  .logo-grid { grid-template-columns: 1fr; }
+  .logo-preview { height: 180px; }
+}
 """
 
 
 def linkify(text: str) -> str:
     escaped = html.escape(text)
-    return re.sub(r"(https?://[^\s<]+)", lambda m: f'<a href="{m.group(1)}">{m.group(1)}</a>', escaped)
+    escaped = re.sub(r"(https?://[^\s<]+)", lambda m: f'<a href="{m.group(1)}">{m.group(1)}</a>', escaped)
+    return re.sub(
+        r"&quot;(/logos/[^<]*?)&quot;",
+        lambda m: f'<a href="{html.escape(m.group(1).lstrip("/"))}">{m.group(1)}</a>',
+        escaped,
+    )
+
+
+def promote_default_logo(lines: list[str]) -> list[str]:
+    default_index = next((i for i, line in enumerate(lines) if line.startswith("- Default Logo:")), None)
+    logos_index = next((i for i, line in enumerate(lines) if line.startswith("## Logos")), None)
+    if default_index is None or logos_index is None:
+        return lines
+    first_bullet = next((i for i in range(logos_index + 1, len(lines)) if lines[i].startswith("- ")), None)
+    if first_bullet is None or default_index == first_bullet:
+        return lines
+    default_line = lines.pop(default_index)
+    lines.insert(first_bullet, default_line)
+    return lines
+
+
+def list_item(text: str) -> str:
+    if text.startswith("Default Logo:"):
+        path = text.partition(":")[2].strip()
+        return f'<strong>Default Logo (recommended):</strong> {linkify(path)}'
+    return linkify(text)
 
 
 def markdown_body(source: str, *, omit_intro: bool = False) -> str:
@@ -97,6 +136,7 @@ def markdown_body(source: str, *, omit_intro: bool = False) -> str:
         if lines and not lines[0].startswith(("#", "- ")):
             lines.pop(0)
 
+    lines = promote_default_logo(lines)
     out: list[str] = []
     in_list = False
     for raw in lines:
@@ -105,7 +145,7 @@ def markdown_body(source: str, *, omit_intro: bool = False) -> str:
             if not in_list:
                 out.append("<ul>")
                 in_list = True
-            out.append(f"<li>{linkify(line[2:])}</li>")
+            out.append(f"<li>{list_item(line[2:])}</li>")
             continue
         if in_list:
             out.append("</ul>")

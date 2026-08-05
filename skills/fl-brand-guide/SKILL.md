@@ -5,7 +5,7 @@ license: Proprietary Fuel Logic brand standards and assets
 compatibility: Works in any harness that supports the Agent Skills standard; browser access is useful for public logo assets and the live guide.
 metadata:
   brand: Fuel Logic
-  version: "1.1"
+  version: "1.2"
   guide: https://xammis.github.io/fl-brand-guide/
 ---
 
@@ -76,7 +76,8 @@ Use Work Sans from Google Fonts with the weights defined in the canonical guide.
 Apply these standards unless the user explicitly requests an exception:
 
 - H1 line height: `0.9`.
-- Nav Font: Work Sans 500, `font-size: 1.3rem`, `color: #414141`, with no underlining.
+- Nav Font: Work Sans 500, `font-size: 1.3rem`, `color: #414141`, with no underlining. Use a default item gap of `1.7rem`, which provides approximately 50 percent more space than an 18px baseline.
+- Navigation responsiveness: navigation must reflow cleanly below the logo on tablet layouts. On large phones and smaller screens, use a simple two-column menu or an equally clear compact pattern, give navigation targets at least `48px` of touch height, and let the primary navigation button span the available width when needed.
 - Global links: do not underline links by default. Use another clear interaction cue, such as the approved link color and a distinct hover or focus state.
 - Large boxes and images: use `border-radius: 1.5rem` by default.
 - Box accents: do not place accent-colored borders across the top of boxes by default.
@@ -103,6 +104,10 @@ nav a {
   font-size: 1.3rem;
   font-weight: 500;
   text-decoration: none;
+}
+
+nav {
+  gap: 1.7rem;
 }
 
 .large-box,
@@ -139,7 +144,8 @@ Before delivery, confirm:
 - Work Sans is the only primary type family;
 - paragraph text defaults to `1.3rem` where the medium permits;
 - H1 line height is `0.9`;
-- navigation uses Work Sans 500 at `1.3rem`, `#414141`, with no underlining;
+- navigation uses Work Sans 500 at `1.3rem`, `#414141`, no underlining, and a default item gap of `1.7rem`;
+- navigation reflows cleanly for tablets and phones with touch targets at least `48px` high;
 - headline and body colors use `Contrast`;
 - emphasized headline words use `Accent` only;
 - links use `Accent Two` without underlining by default;
