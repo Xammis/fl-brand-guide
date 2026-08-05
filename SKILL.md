@@ -84,6 +84,7 @@ Use only official Fuel Logic logo assets. Preserve the original aspect ratio and
 ## Background Images and Light Mode
 
 - The default background color for the entire page is Base (`#FFFFFF`).
+- For web layouts, use Base (`#FFFFFF`) for the header and footer, and alternate section backgrounds so every other section is Base.
 - Use Base, Base Two, or Base Three for most section backgrounds.
 - Mix in Base Four and Base Five occasionally, only about 10 to 20 percent of the time.
 - White and light background images do not provide enough contrast beneath white boxes or divs. Any box or div placed over a white or light background image must use at least Base Three for its background.
