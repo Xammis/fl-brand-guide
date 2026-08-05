@@ -1,7 +1,7 @@
 # FL Brand Guide
 Hand this link to your agent when creating any type of design, document or report and you'll be following FL brand standards:
 
-*Copy/paste this link:*
+**Copy/paste this link into your AI agent chat**
 ```
 https://github.com/Xammis/fl-brand-guide
 ```
