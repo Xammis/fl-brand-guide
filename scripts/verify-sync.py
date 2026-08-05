@@ -41,7 +41,6 @@ def main() -> None:
     skill_text = SKILL.read_text()
     required = [
         "Default Logo (recommended)",
-        "Digital logo menus appear in this order: PNG, WEBP, Compressed, Alternate Logos",
         "H1 line height: `0.9`",
         "Nav font: Work Sans, 500 at `1.1rem`",
         "Header button font: Work Sans, 500 at `1.1rem`",
@@ -58,7 +57,6 @@ def main() -> None:
         "Never place a box over a background when both use the same color",
         "Do not use em dashes unless the user explicitly requests them",
         "Download fl-brand-guide.md",
-        "Point `~/.claude/skills` and `~/.codex/skills` to the shared `~/.agents/skills` directory",
         "Generate each report as a completely new document from scratch",
     ]
     for standard in required:
@@ -76,8 +74,8 @@ def main() -> None:
     palette = page_text[page_text.index("<h2>Color Palette</h2>") : page_text.index("<h2>Element Colors</h2>")]
     if palette.index("Accent Two Dark:") > palette.index("Accent color note:"):
         raise SystemExit("Accent color note must follow the complete palette list")
-    if "The canonical Markdown is the sole standards source" not in skill_text:
-        raise SystemExit("Skill sync contract is missing")
+    if "references/fl-brand-guide.md" not in skill_text:
+        raise SystemExit("Skill does not load the canonical reference")
 
     print("Brand guide page, Markdown, and skill are synchronized.")
 

@@ -110,10 +110,8 @@ small,.small { color: var(--contrast-three); font-size: .9rem; }
 <hr aria-hidden="true">
 <h2>Logo Library Presentation</h2>
 <ul>
-<li>Digital logo menus appear in this order: PNG, WEBP, Compressed, Alternate Logos</li>
 <li>PNG is the recommended digital format</li>
 <li>Highlight the PNG menu item with Accent Two and place a small <code>Recommended</code> label above its title</li>
-<li>Alternate Logos appears last in both digital and print menus</li>
 </ul>
 <hr aria-hidden="true">
 <h2>Fonts</h2>
@@ -147,11 +145,6 @@ small,.small { color: var(--contrast-three); font-size: .9rem; }
 <li>Default item gap: <code>1.7rem</code>, approximately 50 percent more space than an 18px baseline</li>
 <li>Navigation text color: <code>#414141</code></li>
 <li>Navigation links have no underlining</li>
-<li>Navigation must reflow cleanly below the logo on tablet layouts</li>
-<li>On large phones and smaller screens, use a simple two-column menu or an equally clear compact pattern</li>
-<li>Navigation targets must provide at least <code>48px</code> of touch height</li>
-<li>The primary navigation button may span the available width on smaller screens</li>
-<li>On the public guide, place the green <code>Install Skill</code> button at the far right of the desktop navigation</li>
 </ul>
 <hr aria-hidden="true">
 <h2>Color Palette</h2>
@@ -192,7 +185,6 @@ small,.small { color: var(--contrast-three); font-size: .9rem; }
 <li>Do not underline links by default</li>
 <li>Use Accent Two for links</li>
 <li>Provide a clear hover or focus state without depending on an underline</li>
-<li>Use readable linked titles instead of displaying long raw URLs</li>
 </ul>
 <hr aria-hidden="true">
 <h2>Buttons</h2>
@@ -201,7 +193,6 @@ small,.small { color: var(--contrast-three); font-size: .9rem; }
 <li>Header button font: Work Sans, 500 at <code>1.1rem</code></li>
 <li>Default button background: Accent</li>
 <li>Default button text: Base</li>
-<li>Accent Medium or Accent Dark may be used only when required to resolve a contrast issue</li>
 </ul>
 <hr aria-hidden="true">
 <h2>Layout, Surfaces, and Spacing</h2>
@@ -229,11 +220,6 @@ small,.small { color: var(--contrast-three); font-size: .9rem; }
 <ul>
 <li>Generate the public guide directly from this Markdown</li>
 <li>Display the guide title and introductory paragraph once in the hero, without duplicating them in the standards body</li>
-<li>Place a horizontal rule above every H2 section</li>
-<li>The <code>Official Standards</code> tagline uses Accent Two</li>
-<li>Provide a <code>Download fl-brand-guide.md</code> action that downloads this exact canonical file</li>
-<li>Use readable linked titles instead of exposing raw logo URLs</li>
-<li>Keep the Accent color note directly below the complete Color Palette bullet list</li>
 <li>Keep the guide navigation usable on desktop, tablet, large phone, and small phone layouts</li>
 </ul>
 <hr aria-hidden="true">
@@ -242,11 +228,6 @@ small,.small { color: var(--contrast-three); font-size: .9rem; }
 <li><code>fl-brand-guide.md</code> is the sole standards source of truth</li>
 <li>Generate the public page from this Markdown</li>
 <li>Synchronize this Markdown byte-for-byte into <code>skills/fl-brand-guide/references/fl-brand-guide.md</code></li>
-<li>Keep <code>SKILL.md</code> procedural so it does not duplicate visual standards that can drift</li>
-<li>Install the canonical skill through <code>~/.agents/skills/fl-brand-guide</code></li>
-<li>Point <code>~/.claude/skills</code> and <code>~/.codex/skills</code> to the shared <code>~/.agents/skills</code> directory</li>
-<li>Pi, Claude Code, and Codex must resolve the same canonical skill and reference</li>
-<li>Repository verification must fail when the public page, skill reference, or generated skill drifts from this Markdown</li>
 </ul>
 <hr aria-hidden="true">
 <h2>Visual Explainer and Generated Reports</h2>

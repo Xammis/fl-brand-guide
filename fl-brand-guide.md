@@ -23,10 +23,8 @@ Use only official Fuel Logic logo assets. Preserve the original aspect ratio and
 
 ## Logo Library Presentation
 
-- Digital logo menus appear in this order: PNG, WEBP, Compressed, Alternate Logos
 - PNG is the recommended digital format
 - Highlight the PNG menu item with Accent Two and place a small `Recommended` label above its title
-- Alternate Logos appears last in both digital and print menus
 
 ## Fonts
 
@@ -57,11 +55,6 @@ Use only official Fuel Logic logo assets. Preserve the original aspect ratio and
 - Default item gap: `1.7rem`, approximately 50 percent more space than an 18px baseline
 - Navigation text color: `#414141`
 - Navigation links have no underlining
-- Navigation must reflow cleanly below the logo on tablet layouts
-- On large phones and smaller screens, use a simple two-column menu or an equally clear compact pattern
-- Navigation targets must provide at least `48px` of touch height
-- The primary navigation button may span the available width on smaller screens
-- On the public guide, place the green `Install Skill` button at the far right of the desktop navigation
 
 ## Color Palette
 
@@ -100,7 +93,6 @@ Use only official Fuel Logic logo assets. Preserve the original aspect ratio and
 - Do not underline links by default
 - Use Accent Two for links
 - Provide a clear hover or focus state without depending on an underline
-- Use readable linked titles instead of displaying long raw URLs
 
 ## Buttons
 
@@ -108,7 +100,6 @@ Use only official Fuel Logic logo assets. Preserve the original aspect ratio and
 - Header button font: Work Sans, 500 at `1.1rem`
 - Default button background: Accent
 - Default button text: Base
-- Accent Medium or Accent Dark may be used only when required to resolve a contrast issue
 
 ## Layout, Surfaces, and Spacing
 
@@ -133,11 +124,6 @@ Use only official Fuel Logic logo assets. Preserve the original aspect ratio and
 
 - Generate the public guide directly from this Markdown
 - Display the guide title and introductory paragraph once in the hero, without duplicating them in the standards body
-- Place a horizontal rule above every H2 section
-- The `Official Standards` tagline uses Accent Two
-- Provide a `Download fl-brand-guide.md` action that downloads this exact canonical file
-- Use readable linked titles instead of exposing raw logo URLs
-- Keep the Accent color note directly below the complete Color Palette bullet list
 - Keep the guide navigation usable on desktop, tablet, large phone, and small phone layouts
 
 ## Agent Skill Distribution and Synchronization
@@ -145,11 +131,6 @@ Use only official Fuel Logic logo assets. Preserve the original aspect ratio and
 - `fl-brand-guide.md` is the sole standards source of truth
 - Generate the public page from this Markdown
 - Synchronize this Markdown byte-for-byte into `skills/fl-brand-guide/references/fl-brand-guide.md`
-- Keep `SKILL.md` procedural so it does not duplicate visual standards that can drift
-- Install the canonical skill through `~/.agents/skills/fl-brand-guide`
-- Point `~/.claude/skills` and `~/.codex/skills` to the shared `~/.agents/skills` directory
-- Pi, Claude Code, and Codex must resolve the same canonical skill and reference
-- Repository verification must fail when the public page, skill reference, or generated skill drifts from this Markdown
 
 ## Visual Explainer and Generated Reports
 
