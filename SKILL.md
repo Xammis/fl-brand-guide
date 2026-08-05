@@ -15,7 +15,7 @@ Official Fuel Logic standards for people and AI agents creating designs, documen
 
 ## Logos
 
-Use only official Fuel Logic logo assets. Preserve the original aspect ratio and transparent background. Never redraw, recolor, distort, crop, rotate, add effects to, or typeset a replacement for an official logo.
+Use only official Fuel Logic logo assets. Preserve the original aspect ratio and transparent background. Never redraw, recolor, distort, crop, rotate, add effects to, or typeset a replacement for an official logo. NEVER round the corners of any logo file.
 
 - [**Default Logo (recommended)**](logos/digital/png/primary-logos/fl-logo-horizontal.png)
 - [All Logos](logos/)
@@ -83,9 +83,11 @@ Use only official Fuel Logic logo assets. Preserve the original aspect ratio and
 
 ## Background Images and Light Mode
 
-- Use the lighter white background variants whose filenames end in `-wh` by default.
-- Use [`bg-cartographer-wh.webp`](backgrounds/bg-cartographer-wh.webp) as the default background image.
-- Tile `bg-cartographer-wh.webp` three times across the available width by default. For CSS, use `background-repeat: repeat` with `background-size: 33.333% auto`.
+- The default background color for the entire page is Base (`#FFFFFF`).
+- Do not apply a `body` background image by default unless the user explicitly requests one.
+- Use the lighter white background variants whose filenames end in `-wh` when a background image is appropriate.
+- Use [`bg-cartographer-wh.webp`](backgrounds/bg-cartographer-wh.webp) sparingly, only about 20 to 30 percent of the time.
+- Use `bg-cartographer-wh.webp` only on full-width background sections. Tile it three times across the full width with `background-repeat: repeat` and `background-size: 33.333% auto`.
 - Mix in darker background images only when absolutely necessary or when the user explicitly requests them.
 - Every artifact must feel like light mode by default. Do not create a dark-mode treatment unless the user explicitly requests one.
 
@@ -116,7 +118,8 @@ Use only official Fuel Logic logo assets. Preserve the original aspect ratio and
 
 ## Layout, Surfaces, and Spacing
 
-- Large boxes and images use `border-radius: 1.5rem` by default
+- Large boxes and non-logo images use `border-radius: 1.5rem` by default
+- Logo files are the exception and must never have rounded corners
 - Do not create an unnecessary amount of boxes nested inside other boxes
 - NEVER place rounded boxes inside rounded boxes
 - Do not place accent-colored borders across the top of boxes by default
