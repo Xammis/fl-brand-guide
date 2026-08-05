@@ -5,7 +5,7 @@ license: Proprietary Fuel Logic brand standards and assets
 compatibility: Works in any harness that supports the Agent Skills standard; browser access is useful for public logo assets and the live guide.
 metadata:
   brand: Fuel Logic
-  version: "1.2"
+  version: "1.3"
   guide: https://xammis.github.io/fl-brand-guide/
 ---
 
@@ -76,7 +76,8 @@ Use Work Sans from Google Fonts with the weights defined in the canonical guide.
 Apply these standards unless the user explicitly requests an exception:
 
 - H1 line height: `0.9`.
-- Nav Font: Work Sans 500, `font-size: 1.3rem`, `color: #414141`, with no underlining. Use a default item gap of `1.7rem`, which provides approximately 50 percent more space than an 18px baseline.
+- Nav Font: Work Sans 500, `font-size: 1.1rem`, `color: #414141`, with no underlining. Use a default item gap of `1.7rem`, which provides approximately 50 percent more space than an 18px baseline.
+- Header buttons: use Work Sans 500 at `font-size: 1.1rem` by default.
 - Navigation responsiveness: navigation must reflow cleanly below the logo on tablet layouts. On large phones and smaller screens, use a simple two-column menu or an equally clear compact pattern, give navigation targets at least `48px` of touch height, and let the primary navigation button span the available width when needed.
 - Global links: do not underline links by default. Use another clear interaction cue, such as the approved link color and a distinct hover or focus state.
 - Large boxes and images: use `border-radius: 1.5rem` by default.
@@ -85,6 +86,7 @@ Apply these standards unless the user explicitly requests an exception:
 - Punctuation: do not use em dashes. This means Unicode U+2014. Use commas, periods, colons, parentheses, or separate sentences instead. Use an em dash only when the user explicitly requests it.
 - Section spacing: padding and margins between sections must feel spacious and never crowded. Use a consistent responsive spacing rhythm with clear separation between content groups.
 - Surface contrast: never place a box over a background when both use the same color. For example, do not place a white box on a white background or a black box on a black background. Choose a different approved surface color, border treatment, or surrounding background so the box remains visually distinct.
+- Accent shade restriction: NEVER use Accent Medium or Accent Dark unless absolutely necessary. Use either shade only as a fallback when Brand Primary or Accent creates a contrast issue. Do not use these darker greens for decoration, variety, labels, or routine hover states.
 
 Use this baseline when authoring CSS:
 
@@ -101,13 +103,20 @@ nav,
 nav a {
   color: #414141;
   font-family: "Work Sans", sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 500;
   text-decoration: none;
 }
 
 nav {
   gap: 1.7rem;
+}
+
+header button,
+header .button {
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .large-box,
@@ -127,7 +136,7 @@ When creating a Fuel Logic report with `visual-explainer` or another HTML genera
 3. Generate a completely new HTML document from scratch. Never edit, restyle, or copy CSS/layout from the previous pass.
 4. Preserve the source report's facts, sections, caveats, and meaning, but derive every visual decision only from the current brand guide and the content's information architecture.
 5. Load Work Sans weights 400, 500, and 700 from Google Fonts.
-6. Use the official logo, font sizes, palette, element colors, button typography, navigation treatment, H1 line height, radius, and spacing rules.
+6. Use the official logo, font sizes, palette, element colors, button typography, navigation treatment, H1 line height, radius, and spacing rules. Avoid Accent Medium and Accent Dark unless contrast makes one absolutely necessary.
 7. Override visual-explainer template fonts and palettes. Do not retain template-specific serif, teal, violet, neon, or unrelated brand treatments.
 8. Remove default soft shadows, top accent borders on boxes, underlined links, and em dashes unless the user explicitly requested them.
 9. Keep the page responsive, semantic, readable, spacious, and free of horizontal overflow.
@@ -144,10 +153,12 @@ Before delivery, confirm:
 - Work Sans is the only primary type family;
 - paragraph text defaults to `1.3rem` where the medium permits;
 - H1 line height is `0.9`;
-- navigation uses Work Sans 500 at `1.3rem`, `#414141`, no underlining, and a default item gap of `1.7rem`;
+- navigation uses Work Sans 500 at `1.1rem`, `#414141`, no underlining, and a default item gap of `1.7rem`;
+- header buttons use Work Sans 500 at `1.1rem`;
 - navigation reflows cleanly for tablets and phones with touch targets at least `48px` high;
 - headline and body colors use `Contrast`;
 - emphasized headline words use `Accent` only;
+- Accent Medium and Accent Dark appear only when needed to resolve a contrast issue;
 - links use `Accent Two` without underlining by default;
 - captions use `Contrast Three`;
 - buttons use `Accent` backgrounds, `Base` text, Work Sans 500, and `1.3rem` text;

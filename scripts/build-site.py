@@ -43,11 +43,12 @@ small,.small { color: var(--contrast-three); font-size: .9rem; }
 .shell { width: min(1140px, calc(100% - 32px)); margin: auto; padding: 42px 0 72px; }
 .header { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding-bottom: 34px; border-bottom: 1px solid var(--base-three); }
 .header img { width: min(390px, 52vw); height: auto; display: block; }
-.nav { display: flex; align-items: center; gap: 27px; flex-wrap: wrap; margin-left: auto; font-size: 1.3rem; font-weight: 500; }
+.nav { display: flex; align-items: center; gap: 27px; flex-wrap: wrap; margin-left: auto; font-size: 1.1rem; font-weight: 500; }
 .nav a:not(.button) { color: var(--contrast); text-decoration: none; }
 .nav a:not(.button):hover { color: var(--accent-two); }
 .hero { padding: clamp(42px, 8vw, 92px) 0 24px; max-width: 900px; }
-.eyebrow { color: var(--accent-dark); font-size: .9rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.eyebrow { color: var(--contrast-two); font-size: .9rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.home-eyebrow { color: var(--accent-two); }
 .accent { color: var(--accent); }
 .lead { color: var(--contrast-two); max-width: 760px; }
 .guide { max-width: 920px; }
@@ -58,7 +59,8 @@ small,.small { color: var(--contrast-three); font-size: .9rem; }
 .guide code { background: var(--base-two); border: 1px solid var(--base-three); border-radius: 5px; padding: .08em .35em; }
 .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
 .button { display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: 8px; background: var(--accent); color: var(--base); font: 500 1.3rem "Work Sans", sans-serif; padding: .72em 1.1em; text-decoration: none; }
-.button:hover { background: var(--accent-medium); color: var(--base); }
+.button:hover { background: var(--contrast); color: var(--base); }
+.nav .button { font-size: 1.1rem; }
 .button.secondary { background: var(--contrast); }
 .logo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; margin-top: 30px; }
 .logo-card { min-width: 0; border: 1px solid var(--base-three); border-radius: 1.5rem; overflow: hidden; background: var(--base); }
@@ -153,8 +155,11 @@ def markdown_body(source: str, *, omit_intro: bool = False) -> str:
         if not line:
             continue
         if line.startswith("## "):
+            heading = line[3:]
             out.append('<hr aria-hidden="true">')
-            out.append(f"<h2>{html.escape(line[3:])}</h2>")
+            out.append(f"<h2>{html.escape(heading)}</h2>")
+            if heading == "Color Pallete:":
+                out.append('<div class="notice"><strong>Accent color note:</strong> NEVER use Accent Medium or Accent Dark unless absolutely necessary. Use either color only as a fallback when Brand Primary or Accent creates a contrast issue.</div>')
         elif line.startswith("# "):
             out.append(f"<h1>{html.escape(line[2:])}</h1>")
         else:
@@ -178,7 +183,7 @@ def page(title: str, body: str, depth: int = 0) -> str:
 
 
 def build_home() -> None:
-    body = f'''<section class="hero"><div class="eyebrow">Official standards · v1.0</div><h1>Fuel Logic <span class="accent">Brand Guide</span></h1><p class="lead">One public source for the people and AI agents creating Fuel Logic designs, documents, reports, and digital experiences.</p><div class="actions"><a class="button" href="logos/">Browse logos</a><a class="button secondary" href="fl-brand-guide.md">Open raw Markdown</a><a class="button secondary" href="https://github.com/Xammis/fl-brand-guide/tree/main/skills/fl-brand-guide">Install AI skill</a></div></section><article class="guide">{markdown_body(GUIDE.read_text(), omit_intro=True)}</article>'''
+    body = f'''<section class="hero"><div class="eyebrow home-eyebrow">Official standards · v1.0</div><h1>Fuel Logic <span class="accent">Brand Guide</span></h1><p class="lead">One public source for the people and AI agents creating Fuel Logic designs, documents, reports, and digital experiences.</p><div class="actions"><a class="button" href="logos/">Browse logos</a><a class="button secondary" href="fl-brand-guide.md">Open raw Markdown</a><a class="button secondary" href="https://github.com/Xammis/fl-brand-guide/tree/main/skills/fl-brand-guide">Install AI skill</a></div></section><article class="guide">{markdown_body(GUIDE.read_text(), omit_intro=True)}</article>'''
     (ROOT / "index.html").write_text(page("Brand Guide", body))
 
 
