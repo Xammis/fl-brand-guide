@@ -26,18 +26,17 @@ The canonical skill lives at `skills/fl-brand-guide/` and follows the Agent Skil
 
 ```bash
 git clone https://github.com/Xammis/fl-brand-guide.git ~/fl-brand-guide
-mkdir -p ~/.agents/skills ~/.claude/skills ~/.codex/skills
+mkdir -p ~/.agents/skills ~/.claude ~/.codex
 ln -sfn ~/fl-brand-guide/skills/fl-brand-guide ~/.agents/skills/fl-brand-guide
-ln -sfn ~/.agents/skills/fl-brand-guide ~/.claude/skills/fl-brand-guide
-ln -sfn ~/.agents/skills/fl-brand-guide ~/.codex/skills/fl-brand-guide
+ln -sfn ../.agents/skills ~/.claude/skills
+ln -sfn ../.agents/skills ~/.codex/skills
 ```
 
 - Pi discovers `~/.agents/skills/` globally.
-- Codex uses the shared Agent Skills location; the explicit symlink also supports installations expecting `~/.codex/skills/`.
-- Claude Code receives the same canonical skill through `~/.claude/skills/`.
-- Every harness resolves to one version-controlled skill and one unchanged standards reference.
+- `~/.claude/skills` and `~/.codex/skills` both resolve to the complete shared `~/.agents/skills/` directory.
+- Every harness sees one global skill collection, one version-controlled Fuel Logic skill, and one unchanged standards reference.
 
-Reload or restart an already-running harness after installation.
+If either harness-specific path already exists as a real directory, migrate any unique skills into `~/.agents/skills/` before replacing it with the symlink. Reload or restart an already-running harness after installation.
 
 ## Build
 

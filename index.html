@@ -35,12 +35,16 @@ small,.small { color: var(--contrast-three); font-size: .9rem; }
 .shell { width: min(1140px, calc(100% - 32px)); margin: auto; padding: 42px 0 72px; }
 .header { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding-bottom: 34px; border-bottom: 1px solid var(--base-three); }
 .header img { width: min(390px, 52vw); height: auto; display: block; }
-.nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: .9rem; font-weight: 500; }
+.nav { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-left: auto; font-size: 1.3rem; font-weight: 500; }
+.nav a:not(.button) { color: var(--contrast); text-decoration: none; }
+.nav a:not(.button):hover { color: var(--accent-two); }
 .hero { padding: clamp(42px, 8vw, 92px) 0 24px; max-width: 900px; }
 .eyebrow { color: var(--accent-dark); font-size: .9rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .accent { color: var(--accent); }
 .lead { color: var(--contrast-two); max-width: 760px; }
 .guide { max-width: 920px; }
+.guide hr { margin: 3rem 0 0; border: 0; border-top: 1px solid var(--base-three); }
+.guide hr + h2 { margin-top: 1.4rem; }
 .guide ul { padding-left: 1.3em; }
 .guide li { margin: .45rem 0; overflow-wrap: anywhere; }
 .guide code { background: var(--base-two); border: 1px solid var(--base-three); border-radius: 5px; padding: .08em .35em; }
@@ -59,16 +63,19 @@ small,.small { color: var(--contrast-three); font-size: .9rem; }
 .folder-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr)); gap: 14px; margin: 28px 0; }
 .folder { display: block; padding: 20px; border-radius: 10px; background: var(--base-four); border: 1px solid color-mix(in srgb,var(--accent) 35%,var(--base-three)); color: var(--contrast); text-decoration: none; font-weight: 700; }
 .folder:hover { background: var(--accent); color: var(--base); }
+.folder.recommended { background: var(--accent-two); border-color: var(--accent-two); color: var(--base); }
+.folder.recommended:hover { background: var(--accent-two-dark); }
+.folder-kicker { display: block; margin-bottom: 4px; color: var(--base); font-size: .9rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
 .notice { margin: 28px 0; padding: 18px 20px; background: var(--base-five); border-left: 5px solid var(--accent-two); }
 .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--base-three); color: var(--contrast-three); font-size: .9rem; }
 @media(max-width:700px){.header{align-items:flex-start;flex-direction:column}.shell{width:min(100% - 24px,1140px)}.logo-grid{grid-template-columns:1fr}.logo-preview{height:180px}}
 </style></head><body><div class="topline"></div><div class="shell">
-<header class="header"><a href=""><img src="logos/digital/png/primary-logos/fl-logo-horizontal.png" alt="Fuel Logic"></a><nav class="nav"><a href="">Brand guide</a><a href="logos/">All logos</a><a href="fl-brand-guide.md">Markdown</a><a href="https://github.com/Xammis/fl-brand-guide">GitHub</a></nav></header>
-<section class="hero"><div class="eyebrow">Official standards · v1.0</div><h1>Fuel Logic <span class="accent">Brand Guide</span></h1><p class="lead">One public source for the people and AI agents creating Fuel Logic designs, documents, reports, and digital experiences.</p><div class="actions"><a class="button" href="logos/">Browse logos</a><a class="button secondary" href="fl-brand-guide.md">Open raw Markdown</a><a class="button secondary" href="https://github.com/Xammis/fl-brand-guide/tree/main/skills/fl-brand-guide">Install AI skill</a></div></section><article class="guide"><h1>Fuel Logic Brand Guide v1.0</h1>
-<p>Everything you and your AI agent needs to follow the official Fuel Logic brand standards.</p>
+<header class="header"><a href=""><img src="logos/digital/png/primary-logos/fl-logo-horizontal.png" alt="Fuel Logic"></a><nav class="nav"><a href="">Brand guide</a><a href="logos/">All logos</a><a href="fl-brand-guide.md">Markdown</a><a href="https://github.com/Xammis/fl-brand-guide">GitHub</a><a class="button" href="https://github.com/Xammis/fl-brand-guide/tree/main/skills/fl-brand-guide">Install Skill</a></nav></header>
+<section class="hero"><div class="eyebrow">Official standards · v1.0</div><h1>Fuel Logic <span class="accent">Brand Guide</span></h1><p class="lead">One public source for the people and AI agents creating Fuel Logic designs, documents, reports, and digital experiences.</p><div class="actions"><a class="button" href="logos/">Browse logos</a><a class="button secondary" href="fl-brand-guide.md">Open raw Markdown</a><a class="button secondary" href="https://github.com/Xammis/fl-brand-guide/tree/main/skills/fl-brand-guide">Install AI skill</a></div></section><article class="guide"><hr aria-hidden="true">
 <h2>FL-Brand-Guide Repo Location:</h2>
 <p>Hand this link to your agent when creating any type of design, document or report and you&#x27;ll be following FL brand standards:</p>
 <p><a href="https://xammis.github.io/fl-brand-guide/">https://xammis.github.io/fl-brand-guide/</a></p>
+<hr aria-hidden="true">
 <h2>Logos:</h2>
 <p>All official logos in github</p>
 <ul>
@@ -81,6 +88,7 @@ small,.small { color: var(--contrast-three); font-size: .9rem; }
 <li>Badge: &quot;/logos/digital/png/primary-logos/fl-logo-badge.png&quot;</li>
 <li>Fallback logos: &quot;/logos/digital/alternate-logos/&quot;</li>
 </ul>
+<hr aria-hidden="true">
 <h2>Fonts:</h2>
 <p>Work Sans (Google Font)</p>
 <ul>
@@ -89,6 +97,7 @@ small,.small { color: var(--contrast-three); font-size: .9rem; }
 <li>Button Font: Work Sans, 500</li>
 <li>Icons: Font Awesome Icons (Free) <a href="https://fontawesome.com/">https://fontawesome.com/</a></li>
 </ul>
+<hr aria-hidden="true">
 <h2>Font Sizes:</h2>
 <ul>
 <li>H1: clamp(3.1rem,3.1rem + ((1vw - .2rem) * 1.5),4rem),4rem)</li>
@@ -101,6 +110,7 @@ small,.small { color: var(--contrast-three); font-size: .9rem; }
 <li>Small text size: 0.9rem</li>
 <li>Button Text Size: 1.3rem</li>
 </ul>
+<hr aria-hidden="true">
 <h2>Color Pallete:</h2>
 <ul>
 <li>Brand Primary: #A2CD3A (Official Green, also Accent)</li>
@@ -119,6 +129,7 @@ small,.small { color: var(--contrast-three); font-size: .9rem; }
 <li>Accent Two Light: #FFA67D (Light Orange)</li>
 <li>Accent Two Dark: #AC603C (Dark Orange)</li>
 </ul>
+<hr aria-hidden="true">
 <h2>Element Colors:</h2>
 <ul>
 <li>Text: &quot;Contrast&quot;</li>

@@ -43,12 +43,16 @@ small,.small { color: var(--contrast-three); font-size: .9rem; }
 .shell { width: min(1140px, calc(100% - 32px)); margin: auto; padding: 42px 0 72px; }
 .header { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding-bottom: 34px; border-bottom: 1px solid var(--base-three); }
 .header img { width: min(390px, 52vw); height: auto; display: block; }
-.nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: .9rem; font-weight: 500; }
+.nav { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-left: auto; font-size: 1.3rem; font-weight: 500; }
+.nav a:not(.button) { color: var(--contrast); text-decoration: none; }
+.nav a:not(.button):hover { color: var(--accent-two); }
 .hero { padding: clamp(42px, 8vw, 92px) 0 24px; max-width: 900px; }
 .eyebrow { color: var(--accent-dark); font-size: .9rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .accent { color: var(--accent); }
 .lead { color: var(--contrast-two); max-width: 760px; }
 .guide { max-width: 920px; }
+.guide hr { margin: 3rem 0 0; border: 0; border-top: 1px solid var(--base-three); }
+.guide hr + h2 { margin-top: 1.4rem; }
 .guide ul { padding-left: 1.3em; }
 .guide li { margin: .45rem 0; overflow-wrap: anywhere; }
 .guide code { background: var(--base-two); border: 1px solid var(--base-three); border-radius: 5px; padding: .08em .35em; }
@@ -67,6 +71,9 @@ small,.small { color: var(--contrast-three); font-size: .9rem; }
 .folder-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr)); gap: 14px; margin: 28px 0; }
 .folder { display: block; padding: 20px; border-radius: 10px; background: var(--base-four); border: 1px solid color-mix(in srgb,var(--accent) 35%,var(--base-three)); color: var(--contrast); text-decoration: none; font-weight: 700; }
 .folder:hover { background: var(--accent); color: var(--base); }
+.folder.recommended { background: var(--accent-two); border-color: var(--accent-two); color: var(--base); }
+.folder.recommended:hover { background: var(--accent-two-dark); }
+.folder-kicker { display: block; margin-bottom: 4px; color: var(--base); font-size: .9rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
 .notice { margin: 28px 0; padding: 18px 20px; background: var(--base-five); border-left: 5px solid var(--accent-two); }
 .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--base-three); color: var(--contrast-three); font-size: .9rem; }
 @media(max-width:700px){.header{align-items:flex-start;flex-direction:column}.shell{width:min(100% - 24px,1140px)}.logo-grid{grid-template-columns:1fr}.logo-preview{height:180px}}
@@ -78,10 +85,21 @@ def linkify(text: str) -> str:
     return re.sub(r"(https?://[^\s<]+)", lambda m: f'<a href="{m.group(1)}">{m.group(1)}</a>', escaped)
 
 
-def markdown_body(source: str) -> str:
+def markdown_body(source: str, *, omit_intro: bool = False) -> str:
+    lines = source.splitlines()
+    if omit_intro:
+        while lines and not lines[0].strip():
+            lines.pop(0)
+        if lines and lines[0].startswith("# "):
+            lines.pop(0)
+        while lines and not lines[0].strip():
+            lines.pop(0)
+        if lines and not lines[0].startswith(("#", "- ")):
+            lines.pop(0)
+
     out: list[str] = []
     in_list = False
-    for raw in source.splitlines():
+    for raw in lines:
         line = raw.rstrip()
         if line.startswith("- "):
             if not in_list:
@@ -95,6 +113,7 @@ def markdown_body(source: str) -> str:
         if not line:
             continue
         if line.startswith("## "):
+            out.append('<hr aria-hidden="true">')
             out.append(f"<h2>{html.escape(line[3:])}</h2>")
         elif line.startswith("# "):
             out.append(f"<h1>{html.escape(line[2:])}</h1>")
@@ -114,12 +133,12 @@ def page(title: str, body: str, depth: int = 0) -> str:
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>{STYLE}</style></head><body><div class="topline"></div><div class="shell">
-<header class="header"><a href="{prefix}"><img src="{logo}" alt="Fuel Logic"></a><nav class="nav"><a href="{prefix}">Brand guide</a><a href="{prefix}logos/">All logos</a><a href="{prefix}fl-brand-guide.md">Markdown</a><a href="https://github.com/Xammis/fl-brand-guide">GitHub</a></nav></header>
+<header class="header"><a href="{prefix}"><img src="{logo}" alt="Fuel Logic"></a><nav class="nav"><a href="{prefix}">Brand guide</a><a href="{prefix}logos/">All logos</a><a href="{prefix}fl-brand-guide.md">Markdown</a><a href="https://github.com/Xammis/fl-brand-guide">GitHub</a><a class="button" href="https://github.com/Xammis/fl-brand-guide/tree/main/skills/fl-brand-guide">Install Skill</a></nav></header>
 {body}<footer class="footer">Fuel Logic Brand Guide v1.0 · Public standards for people and AI agents</footer></div></body></html>'''
 
 
 def build_home() -> None:
-    body = f'''<section class="hero"><div class="eyebrow">Official standards · v1.0</div><h1>Fuel Logic <span class="accent">Brand Guide</span></h1><p class="lead">One public source for the people and AI agents creating Fuel Logic designs, documents, reports, and digital experiences.</p><div class="actions"><a class="button" href="logos/">Browse logos</a><a class="button secondary" href="fl-brand-guide.md">Open raw Markdown</a><a class="button secondary" href="https://github.com/Xammis/fl-brand-guide/tree/main/skills/fl-brand-guide">Install AI skill</a></div></section><article class="guide">{markdown_body(GUIDE.read_text())}</article>'''
+    body = f'''<section class="hero"><div class="eyebrow">Official standards · v1.0</div><h1>Fuel Logic <span class="accent">Brand Guide</span></h1><p class="lead">One public source for the people and AI agents creating Fuel Logic designs, documents, reports, and digital experiences.</p><div class="actions"><a class="button" href="logos/">Browse logos</a><a class="button secondary" href="fl-brand-guide.md">Open raw Markdown</a><a class="button secondary" href="https://github.com/Xammis/fl-brand-guide/tree/main/skills/fl-brand-guide">Install AI skill</a></div></section><article class="guide">{markdown_body(GUIDE.read_text(), omit_intro=True)}</article>'''
     (ROOT / "index.html").write_text(page("Brand Guide", body))
 
 
@@ -137,12 +156,40 @@ def file_card(path: Path, current: Path) -> str:
     return f'<article class="logo-card">{preview}<div class="logo-meta"><b>{html.escape(name)}</b><span>{kind}</span></div></article>'
 
 
+def folder_sort_key(directory: Path, child: Path) -> tuple[int, str]:
+    if directory == LOGOS / "digital":
+        digital_order = {"png": 0, "webp": 1, "compressed-for-web": 2, "alternate-logos": 3}
+        return digital_order.get(child.name, 99), child.name
+    return (1 if child.name == "alternate-logos" else 0), child.name
+
+
+def folder_label(directory: Path, child: Path) -> str:
+    if directory == LOGOS / "digital":
+        return {
+            "png": "PNG",
+            "webp": "WEBP",
+            "compressed-for-web": "Compressed",
+            "alternate-logos": "Alternate Logos",
+        }.get(child.name, child.name.replace("-", " ").title())
+    if child.name in {"png", "webp", "pdf"}:
+        return child.name.upper()
+    return child.name.replace("-", " ").title()
+
+
+def folder_link(directory: Path, child: Path) -> str:
+    recommended = directory == LOGOS / "digital" and child.name == "png"
+    class_name = "folder recommended" if recommended else "folder"
+    kicker = '<span class="folder-kicker">Recommended</span>' if recommended else ""
+    label = html.escape(folder_label(directory, child))
+    return f'<a class="{class_name}" href="{html.escape(child.name)}/">{kicker}{label}</a>'
+
+
 def build_directory(directory: Path) -> None:
     depth = len(directory.relative_to(ROOT).parts)
-    dirs = sorted([p for p in directory.iterdir() if p.is_dir()], key=lambda p: p.name)
+    dirs = sorted([p for p in directory.iterdir() if p.is_dir()], key=lambda p: folder_sort_key(directory, p))
     files = sorted([p for p in directory.iterdir() if p.is_file() and p.name not in {"index.html", "manifest.json"}], key=lambda p: p.name)
     crumbs = " / ".join(part.replace("-", " ").title() for part in directory.relative_to(ROOT).parts)
-    folder_links = "".join(f'<a class="folder" href="{html.escape(d.name)}/">{html.escape(d.name.replace("-", " ").title())}</a>' for d in dirs)
+    folder_links = "".join(folder_link(directory, d) for d in dirs)
     cards = "".join(file_card(f, directory) for f in files)
     body = f'<section class="hero"><div class="eyebrow">Official assets</div><h1>{html.escape(crumbs)}</h1><p class="lead">Download approved Fuel Logic logo files. Filenames are lowercase and dash-separated for predictable use across teams and tools.</p></section>'
     if folder_links:
